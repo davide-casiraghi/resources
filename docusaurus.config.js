@@ -88,7 +88,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://bitbucket.org/agiledrop/developer_resources',
+            'https://bitbucket.org/agiledrop/developer_resources/src/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
