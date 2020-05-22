@@ -17,28 +17,10 @@ html {
   color: $grayLighter
 }
 
-.docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-  font-size: 30px;
-  line-height: 37px;
+h2 {
   font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.markdown > *:first-child {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 60px;
-}
-
-[data-theme="dark"] .markdown > *:first-child {
-  opacity: .5;
-}
-
-.markdown > h2 {
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: convert(25, px, ems);
+  line-height: 1.2;
   margin-top: 44px;
 }
 

@@ -5,86 +5,102 @@
 //
 // =============================================================================
 
+
+// main content + sidebar wrapper
+.docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+  padding: 0 !important;
+}
+
+// main content
 .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-  height: calc( 100vh - 77px );
-  overflow: scroll;
+  height: calc( 100vh - 102.5px );
+  overflow-y: scroll;
+  padding-top: 42.5px !important;
   padding-left: 50px !important;
   padding-right: 50px !important;
-}
-
-// scrollbars
-.docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-track-piece:start {
-  background-color: $white;
-}
-
-.docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-track {
-  -webkit-box-shadow: none;
-  border-radius: 10px;
-  background-color: $grayLighter;
-}
-
-.docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar {
-  -webkit-box-shadow: none;
-  width: 12px;
-  background-color: $grayLighter;
-}
-
-.docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: none;
-  background-color: $grayLight;
-}
-
-[data-theme="dark"] {
-  .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-track-piece:start {
-    background-color: $midnight;
-  }
-  .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-track{
-    background-color: $grayLighter;
-  }
-
-  .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar{
-    background-color: $grayLighter;
-  }
-
-  .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-thumb{
-    background-color: $gray;
-  }
-
-  .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-::-webkit-scrollbar-corner {
-    background: $midnight
-  }
-
-  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
-    background-color: $cloudy !important;
-    .token-line {
-      color: $space !important;
-    }
-  }
-
-}
-
-.docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-  padding-top: 43.5px !important;
-  max-width: unset;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
   a {
     color: $space;
   }
 }
 
-.codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
-  background-color: $grayLighter !important;
-  .token-line {
-    color: $space !important;
-  }
-}
-
-[data-theme="dark"] .docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-  a {
-    color: $white;
+// main content DM
+[data-theme="dark"] {
+  .docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+    a {
+      color: $white;
+    }
   }
 }
 
 
+.docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+  font-size: convert(30, px, ems);
+  line-height: 37px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.markdown > *:first-child {
+  font-weight: 500;
+  font-size: convert(16, px, ems);
+  line-height: 20px;
+  margin-bottom: 60px;
+}
+
+[data-theme="dark"] .markdown > *:first-child {
+  opacity: .5;
+}
+
+
+// main content scrollbars
+.docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+
+  &::-webkit-scrollbar-track-piece:start {
+    background-color: $white;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border-radius: 10px;
+    background-color: $grayLightest;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-box-shadow: none;
+    width: 11px;
+    background-color: $grayLightest;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+    background-color: $grayLight;
+  }
+}
+
+
+// main content scrollbars DM
+[data-theme="dark"] {
+  .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+
+    &::-webkit-scrollbar-track-piece:start {
+      background-color: $midnight;
+    }
+
+    &::-webkit-scrollbar-track{
+      background-color: $grayLighter;
+    }
+
+    &::-webkit-scrollbar{
+      background-color: $grayLighter;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background-color: $gray;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: $midnight
+    }
+  }
+}

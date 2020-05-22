@@ -4,106 +4,123 @@
 // Snippets pagination area styles
 //
 // =============================================================================
+
+
+// pagination link
 .pagination-nav__link {
   padding: 0;
   border: none;
   position: relative;
+
+  // link icon position
   &:before {
     content: "";
     position: absolute;
-    left: 10px;
-    top: 12px;
-    background: $space;
-    height: 2px;
-    width: 8px;
-    transform: rotate(-45deg);
-    transition: .3s;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 17px;
-    background: $space;
-    height: 2px;
-    width: 8px;
-    transform: rotate(45deg);
+    top:0;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
     transition: .3s;
   }
 }
 
-.pagination-nav__sublabel {
-  display: none;
-}
 
+// pagination link label
 .pagination-nav__label {
   position: relative;
-  padding-left: 45px;
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
   color: $space;
 }
 
-.pagination-nav__label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid $space;
-  transition: .3s;
-
-}
-
-.pagination-nav__item--next {
-
-  .pagination-nav__link {
-    &:before {
-      left: unset;
-      right: 10px;
-      transform: rotate(45deg)
-    }
-    &:after {
-      left: unset;
-      right: 10px;
-      transform: rotate(-45deg)
-    }
-  }
-
-  .pagination-nav__label {
-    padding-right: 45px;
-    padding-left: 0;
-
-    &:before {
-      left: unset;
-      right: 0;
-    }
-  }
-}
-
-
+// pagination link label DM
 [data-theme="dark"] {
-  color : $white;
-  .pagination-nav__link {
-    &:before, &:after {
-      background: $white;
-    }
-  }
   .pagination-nav__label {
     color: $white;
-    &:before {
-      border-color: $white;
+  }
+}
+
+// hide pagination link sublabel
+.pagination-nav__sublabel {
+  display: none;
+}
+
+// pagination link -- next
+.pagination-nav__item.pagination-nav__item--next {
+
+  // link label
+  .pagination-nav__label {
+    padding-right: 45px;
+  }
+
+  // link icon
+  .pagination-nav__link:before {
+    right: 0;
+    //background-image:url("/../../static/img/right-arrow-circle.svg");
+  }
+}
+
+// pagination link -- next DM
+[data-theme="dark"] {
+  .pagination-nav__item.pagination-nav__item--next {
+    // link icon
+    .pagination-nav__link:before {
+      right: 0;
+      //background-image:url("/../../static/img/right-arrow-circle--white.svg");
     }
   }
 }
 
-.pagination-nav__link:hover {
-  &:before, &:after {
-    background: $red;
-  }
-  .pagination-nav__label:before {
-    border-color: $red;
+// pagination link -- next hover
+.pagination-nav__item.pagination-nav__item--next:hover {
+
+  // link icon
+  .pagination-nav__link:before {
+    //background-image:url("/../../static/img/right-arrow-circle--red.svg");
   }
 }
+
+
+// pagination link -- prev
+.pagination-nav__item:not(.pagination-nav__item--next) {
+
+  //link label
+  .pagination-nav__label {
+    padding-left: 45px;
+  }
+
+  //link icon
+  .pagination-nav__link:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    //background-image:url("/../../static/img/left-arrow-circle.svg");
+    background-size: cover;
+    color: $midnight;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+// pagination link -- prev DM
+[data-theme="dark"] {
+  .pagination-nav__item:not(.pagination-nav__item--next) {
+    // link icon
+    .pagination-nav__link:before {
+      right: 0;
+      //background-image:url("/../../static/img/left-arrow-circle--white.svg");
+    }
+  }
+}
+
+// pagination link -- prev :hover
+.pagination-nav__item:not(.pagination-nav__item--next):hover {
+
+  // link icon
+  .pagination-nav__link:before {
+    //background-image:url("/../../static/img/left-arrow-circle--red.svg");
+  }
+}
+
