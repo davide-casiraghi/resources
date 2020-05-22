@@ -1,0 +1,203 @@
+// =============================================================================
+//
+// @file _snippets_menu.scss
+// Snippets menus
+//
+// =============================================================================
+
+// Background DM
+[data-theme="dark"] {
+  .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-,
+  .navbar,
+  .docMainContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+    background-color:$midnight;
+  }
+}
+
+// Navigation
+.navbar {
+  box-shadow:none;
+  border-bottom:1px solid $grayLighter;
+}
+
+// Navigation DM
+[data-theme="dark"] {
+  .navbar {
+    border-color:$shark;
+    background-color:$midnight;
+  }
+}
+
+// Navigation menu
+a.navbar__link {
+  font-weight: 500;
+  font-size: convert(16, px, ems);
+  position:relative;
+  padding:0;
+  margin:0 1em;
+  transition: .3s;
+
+  &::before {
+    content:'';
+    background-color:$space;
+    height:1px;
+    position:absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: none;
+  }
+
+  &:hover {
+    color:$space;
+
+    &::before {
+      display: block;
+    }
+  }
+}
+
+// Navigation menu DM
+[data-theme="dark"] {
+  a.navbar__link {
+    color: $grayLighter;
+
+    &:hover {
+      color:$grayLighter;
+    }
+
+    &::before {
+      background-color:$grayLighter;
+    }
+  }
+}
+
+/* Side menu */
+ul.menu__list.menu__list {
+  margin-left:0;
+}
+
+// Side link arrow collapsed
+.menu__list-item--collapsed {
+  .menu__link--sublist {
+    color:$gray;
+
+    &:after {
+      transform: rotateZ(0deg);
+    }
+  }
+}
+
+// Side link arrow active
+.menu__link--sublist {
+  &::after {
+    color:$gray;
+    background-image:url("/../../static/img/right-arrow.svg");
+    background-size:1rem .8rem;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    content:'';
+  }
+}
+
+// Side link categories
+.menu__list-item {
+  a.menu__link.menu__link--sublist {
+    color:$gray;
+    padding-right:0;
+    font-weight: 600;
+    font-size: convert(16, px, ems);
+    text-transform: uppercase;
+    transition: .3s;
+
+    &:hover {
+      background-color:transparent;
+      color:$space;
+    }
+  }
+}
+
+// Side link categories DM
+[data-theme="dark"] {
+  .menu__list-item {
+    a.menu__link.menu__link--sublist {
+      color: $grayLighter;
+
+      &:hover {
+        color:$white;
+      }
+    }
+  }
+}
+
+// Child items Side menu
+.menu__list-item {
+  a.menu__link {
+    color:$space;
+    font-size:convert(14, px, ems);
+
+    &.active {
+      font-weight:bold;
+      background-color:transparent;
+    }
+  }
+}
+
+// Child items Side menu DM
+[data-theme="dark"] {
+  .menu__list-item {
+    a.menu__link {
+      color:rgba(255,255,255, 0.5);
+
+      &.active,
+      &:hover {
+        color:rgba(255,255,255, 1);
+      }
+    }
+  }
+}
+
+// Table of contents
+.table-of-contents__link {
+  color:$space;
+
+  &.table-of-contents__link--active {
+    font-weight:bold;
+  }
+
+  &:hover {
+    color:$space;
+    text-decoration: underline;
+  }
+}
+
+// Table of contents DM
+[data-theme="dark"] {
+  .table-of-contents__link {
+    color:rgba(255,255,255, 0.5);
+
+    &.table-of-contents__link--active,
+    &:hover {
+      color:rgba(255,255,255, 1);
+      text-decoration: none;
+    }
+  }
+}
+
+// Borders
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  border-right:1px solid $grayLighter;
+}
+
+.tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+  border-left:0px solid $grayLighter;
+}
+
+// Borders DM
+[data-theme="dark"] {
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
+  .table-of-contents.table-of-contents__left-border {
+    border-color:$shark;
+  }
+}
