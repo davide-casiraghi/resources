@@ -1,0 +1,109 @@
+// =============================================================================
+//
+// @file snippets_pagination.scss
+// Snippets pagination area styles
+//
+// =============================================================================
+.pagination-nav__link {
+  padding: 0;
+  border: none;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    background: $space;
+    height: 2px;
+    width: 8px;
+    transform: rotate(-45deg);
+    transition: .3s;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 17px;
+    background: $space;
+    height: 2px;
+    width: 8px;
+    transform: rotate(45deg);
+    transition: .3s;
+  }
+}
+
+.pagination-nav__sublabel {
+  display: none;
+}
+
+.pagination-nav__label {
+  position: relative;
+  padding-left: 45px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: $space;
+}
+
+.pagination-nav__label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid $space;
+  transition: .3s;
+
+}
+
+.pagination-nav__item--next {
+
+  .pagination-nav__link {
+    &:before {
+      left: unset;
+      right: 10px;
+      transform: rotate(45deg)
+    }
+    &:after {
+      left: unset;
+      right: 10px;
+      transform: rotate(-45deg)
+    }
+  }
+
+  .pagination-nav__label {
+    padding-right: 45px;
+    padding-left: 0;
+
+    &:before {
+      left: unset;
+      right: 0;
+    }
+  }
+}
+
+
+[data-theme="dark"] {
+  color : $white;
+  .pagination-nav__link {
+    &:before, &:after {
+      background: $white;
+    }
+  }
+  .pagination-nav__label {
+    color: $white;
+    &:before {
+      border-color: $white;
+    }
+  }
+}
+
+.pagination-nav__link:hover {
+  &:before, &:after {
+    background: $red;
+  }
+  .pagination-nav__label:before {
+    border-color: $red;
+  }
+}

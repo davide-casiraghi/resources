@@ -10,3 +10,11 @@
 *::after {
   box-sizing: inherit;
 }
+
+body {
+  overflow: hidden !important;
+}
+
+html[data-theme='dark'] {
+  background: $midnight
+}
