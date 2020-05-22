@@ -1,0 +1,13 @@
+// =============================================================================
+//
+// @file _mixins.scss
+// Site used mixins.
+//
+// =============================================================================
+
+/* Text truncation */
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
