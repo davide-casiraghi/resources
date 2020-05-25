@@ -5,25 +5,17 @@
 //
 // =============================================================================
 
+// pagination nav
+.pagination-nav {
+  margin-top: 150px;
+}
 
 // pagination link
 .pagination-nav__link {
   padding: 0;
   border: none;
   position: relative;
-
-  // link icon position
-  &:before {
-    content: "";
-    position: absolute;
-    top:0;
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    transition: .3s;
-  }
 }
-
 
 // pagination link label
 .pagination-nav__label {
@@ -44,83 +36,5 @@
 // hide pagination link sublabel
 .pagination-nav__sublabel {
   display: none;
-}
-
-// pagination link -- next
-.pagination-nav__item.pagination-nav__item--next {
-
-  // link label
-  .pagination-nav__label {
-    padding-right: 45px;
-  }
-
-  // link icon
-  .pagination-nav__link:before {
-    right: 0;
-    //background-image:url("/../../static/img/right-arrow-circle.svg");
-  }
-}
-
-// pagination link -- next DM
-[data-theme="dark"] {
-  .pagination-nav__item.pagination-nav__item--next {
-    // link icon
-    .pagination-nav__link:before {
-      right: 0;
-      //background-image:url("/../../static/img/right-arrow-circle--white.svg");
-    }
-  }
-}
-
-// pagination link -- next hover
-.pagination-nav__item.pagination-nav__item--next:hover {
-
-  // link icon
-  .pagination-nav__link:before {
-    //background-image:url("/../../static/img/right-arrow-circle--red.svg");
-  }
-}
-
-
-// pagination link -- prev
-.pagination-nav__item:not(.pagination-nav__item--next) {
-
-  //link label
-  .pagination-nav__label {
-    padding-left: 45px;
-  }
-
-  //link icon
-  .pagination-nav__link:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    //background-image:url("/../../static/img/left-arrow-circle.svg");
-    background-size: cover;
-    color: $midnight;
-    width: 30px;
-    height: 30px;
-  }
-}
-
-// pagination link -- prev DM
-[data-theme="dark"] {
-  .pagination-nav__item:not(.pagination-nav__item--next) {
-    // link icon
-    .pagination-nav__link:before {
-      right: 0;
-      //background-image:url("/../../static/img/left-arrow-circle--white.svg");
-    }
-  }
-}
-
-// pagination link -- prev :hover
-.pagination-nav__item:not(.pagination-nav__item--next):hover {
-
-  // link icon
-  .pagination-nav__link:before {
-    //background-image:url("/../../static/img/left-arrow-circle--red.svg");
-  }
 }
 

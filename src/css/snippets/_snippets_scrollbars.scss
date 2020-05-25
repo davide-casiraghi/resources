@@ -1,0 +1,57 @@
+
+
+// snippets scrollbars
+.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-,
+.codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock-{
+
+  &::-webkit-scrollbar-track-piece:start {
+    background-color: $white;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border-radius: 10px;
+    background-color: $grayLight;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-box-shadow: none;
+    width: 6px;
+    height: 6px;
+    background-color: $grayLight;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    background-color: $gray;
+  }
+}
+
+
+// snippets DM
+[data-theme="dark"] {
+  .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-,
+  .codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock-{
+
+    &::-webkit-scrollbar-track-piece:start {
+      background-color: $midnight;
+    }
+
+    &::-webkit-scrollbar-track{
+      background-color: $grayLighter;
+    }
+
+    &::-webkit-scrollbar{
+      background-color: $grayLighter;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background-color: $gray;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: $midnight
+    }
+  }
+}
