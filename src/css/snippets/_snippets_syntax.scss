@@ -44,3 +44,49 @@ html:not([data-theme="dark"]) {
     }
   }
 }
+
+html[data-theme="dark"] {
+  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- .token{
+
+    &.atrule,
+    &.package,
+    &.punctuation,
+    &.variable,
+    &.operator {
+      color: $metalLight !important;
+      font-weight: bold;
+    }
+
+    &.class-name,
+    &.function {
+      color: $metal !important;
+      font-weight: bold;
+    }
+
+    &.string,
+    &.number,
+    &.single-quoted-string {
+      color: $olive !important;
+    }
+
+    &.double-quoted-string {
+      color: $olive !important;
+      font-weight: bold;
+    }
+
+    &.constant {
+      color: $metalLight !important;
+      font-weight: bold;
+    }
+
+    &.comment {
+      color: $grayDark !important
+    }
+
+    &.keyword {
+      font-style: normal !important;
+      font-weight: bold;
+      color: $lightPurple;
+    }
+  }
+}
