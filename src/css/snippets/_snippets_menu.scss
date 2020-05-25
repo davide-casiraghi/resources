@@ -182,6 +182,9 @@ ul.menu__list.menu__list {
       color:rgba(255,255,255, 1);
       text-decoration: none;
     }
+    &.table-of-contents__link--active {
+      font-weight:bold;
+    }
   }
 }
 
@@ -191,13 +194,23 @@ ul.menu__list.menu__list {
 }
 
 .tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-  border-left:0px solid $grayLighter;
-}
-
-// Borders DM
-[data-theme="dark"] {
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
-  .table-of-contents.table-of-contents__left-border {
-    border-color:$shark;
+  .table-of-contents__left-border {
+    border-left:none;
   }
 }
+
+.row {
+  .col.col--3 {
+    border-left: 1px solid $grayLighter;
+  }
+}
+
+  // Borders DM
+  [data-theme="dark"] {
+    .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
+    .table-of-contents.table-of-contents__left-border,
+    .col.col--3 {
+      border-color:$shark;
+    }
+  }
+

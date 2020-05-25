@@ -11,10 +11,19 @@
   box-sizing: inherit;
 }
 
-body {
-  overflow: hidden !important;
-}
-
 html[data-theme='dark'] {
   background: $midnight
 }
+
+.navbar,
+.main-wrapper {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  padding-top: 42.5px!important;
+}
+
+

@@ -19,7 +19,14 @@ html {
 
 h2 {
   font-weight: 600;
-  font-size: convert(25, px, ems);
+  font-size: convert(22, px, ems);
+  line-height: 1.2;
+  margin-top: 44px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: convert(20, px, ems);
   line-height: 1.2;
   margin-top: 44px;
 }
