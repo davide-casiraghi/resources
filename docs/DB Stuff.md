@@ -6,7 +6,6 @@ title: DB Stuff
 Database related code snippets
 
 ## Simple database query.
-
 ``` php
 $results = \Drupal::database()->query('select * from purge_queue')->fetchAll();
 ```
@@ -19,7 +18,7 @@ $entity_query->addTag('debug')->execute();
 
 ## Delete all 'event' nodes.
 
-```
+``` php
 $result = \Drupal::entityQuery('node')
   ->condition('type', 'event')
   ->execute();

@@ -1,0 +1,46 @@
+html:not([data-theme="dark"]) {
+  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- .token{
+
+    &.punctuation,
+    &.variable,
+    &.operator {
+      color: $grayDarker !important;
+    }
+
+    &.atrule,
+    &.package {
+      font-weight: bold;
+    }
+
+    &.class-name,
+    &.function {
+      color: $redDark !important;
+      font-weight: bold;
+    }
+
+    &.string,
+    &.number,
+    &.single-quoted-string {
+      color: $redDark !important;
+    }
+
+    &.double-quoted-string {
+      color: $redDark !important;
+      font-weight: bold;
+    }
+
+    &.constant {
+      color: $grayDark !important;
+    }
+
+    &.plain,
+    &.comment {
+      color: $grayDark !important
+    }
+
+    &.keyword {
+      font-style: normal !important;
+      font-weight: bold;
+    }
+  }
+}

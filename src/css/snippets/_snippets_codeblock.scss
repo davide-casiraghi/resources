@@ -5,6 +5,8 @@
   background-color: $grayLighter !important;
   .token-line {
     color: $space !important;
+    font-size: convert(13, px, ems);
+    line-height: 1.5;
   }
 
   &:focus {

@@ -6,7 +6,7 @@ title: Dependency Injection snippets
 Dep inject
 
 ### services.yml:
-```
+``` yaml
 services:
   du_user_management:
     class: Drupal\du_user_management\UserManagementService
@@ -18,7 +18,7 @@ services:
 ```
 
 ### Service file
-```
+``` php
   /**
    * Constructor.
    *
@@ -36,7 +36,7 @@ services:
 ## Controller or Form
 
 ### Controller/Form File
-```
+``` php
   /**
    * {@inheritdoc}
    */
@@ -57,7 +57,7 @@ services:
 ## Plugin
 
 ### Plugin File
-```
+``` php
   /**
    * {@inheritdoc}
    */

@@ -5,7 +5,7 @@ title: Migrations
 
 ## Migrations
 ### Run an update migration.
-```
+``` php
 // Remove the prepareUpdate() section if you just want a normal import.
 // To rollback just change 'import' to 'rollback'.
 $migration = \Drupal::service('plugin.manager.migration')->createInstance('machine_name');
@@ -20,19 +20,19 @@ $executable->import();
 ```
 
 ### Interrupt a migration (stop it).
-```
+``` php
 $migration = \Drupal::service('plugin.manager.migration')->createInstance('machine_name');
 $migration->interruptMigration(\Drupal\migrate\Plugin\MigrationInterface::RESULT_STOPPED);
 ```
 
 ### Set a migration status to Idle.
-```
+``` php
 $migration = \Drupal::service('plugin.manager.migration')->createInstance('machine_name');
 $migration->setStatus(\Drupal\migrate\Plugin\MigrationInterface::STATUS_IDLE);
 ```
 
 ### Run a migration on page load (w/?start-migration appended) for xdebug walkthrough.
-```
+``` php
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessage;
 

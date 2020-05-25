@@ -6,7 +6,7 @@ title: Debugging
 Debugging code snippets
 
 ## Debug backtrace any error.
-```
+``` php
 // This function exists in core/includes/bootstrap.inc.
 // Just need to add lines 6-8 to it.
 function _drupal_error_handler($error_level, $message, $filename, $line, $context) {
@@ -19,7 +19,7 @@ function _drupal_error_handler($error_level, $message, $filename, $line, $contex
 ```
 
 ## Debugging search API solr queries:
-```
+``` php
 // You can output the Request object using kint/kpm, but it can be hard
 // to figure out where to set the debugging code. The best place is in
 // the executeRequest function in the following file:
@@ -27,7 +27,7 @@ function _drupal_error_handler($error_level, $message, $filename, $line, $contex
 ```
 
 ## Starting point for debugging ElasticSearch stuff, in the file
-```
+``` php
 // src/ElasticSearch/Parameters/Builder/SearchBuilder.php:
 // Add ksm at the end of build() and getSearchQueryOptions()
 ```
