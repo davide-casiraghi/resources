@@ -11,6 +11,11 @@
   box-sizing: inherit;
 }
 
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 html[data-theme='dark'] {
   background: $midnight
 }
@@ -23,7 +28,7 @@ html[data-theme='dark'] {
 }
 
 .menu {
-  padding-top: 42.5px!important;
+  padding-top: 42.5px !important;
 }
 
 

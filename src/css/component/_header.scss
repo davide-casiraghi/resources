@@ -1,0 +1,46 @@
+// =============================================================================
+//
+// @file _header.scss
+// Header styles
+//
+// =============================================================================
+
+// Theme toggle
+
+.react-toggle-track {
+  height: 19.5px;
+  width: 33px;
+  background: $space;
+}
+
+.react-toggle-thumb {
+  left: 4px;
+  height: 11px;
+  width: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  box-shadow: none;
+}
+
+// toggle checked
+[data-theme='dark'] .react-toggle .react-toggle-track{
+  background: $grayLighter;
+}
+
+[data-theme='dark'] .react-toggle .react-toggle-thumb, .react-toggle--checked .react-toggle-thumb {
+  left: 18px;
+  background: $space;
+  border-color: $space;
+}
+
+.toggle_node_modules-\@docusaurus-theme-classic-src-theme-Toggle-:before {
+  display: none;
+}
+
+.react-toggle--active .react-toggle-thumb ,
+  .react-toggle--focus .react-toggle-thumb {
+  box-shadow: none;
+}
