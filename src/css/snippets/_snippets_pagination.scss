@@ -8,6 +8,9 @@
 // pagination nav
 .pagination-nav {
   margin-top: 150px;
+  @include medium {
+    margin-bottom: 150px;
+  }
 }
 
 // pagination link

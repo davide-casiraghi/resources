@@ -9,17 +9,40 @@
 // main content + sidebar wrapper
 .docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
   padding: 0 !important;
+
+  @include large {
+    max-width: unset;
+  }
 }
 
 // main content
+.docMainContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  max-width: calc( 100% - 265px );
+
+  @include medium {
+    max-width: unset;
+  }
+}
+
 .docItemCol_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
   padding-top: 42.5px !important;
   padding-left: 50px !important;
   padding-right: 50px !important;
+
+  @include medium {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
 }
 
-.docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- a {
-  color: $gray;
+.docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-{
+  a {
+    color: $gray;
+  }
+
+  @include medium {
+    padding: 0
+  }
 }
 
 // snippet heading

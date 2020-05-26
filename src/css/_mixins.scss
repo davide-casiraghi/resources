@@ -5,9 +5,22 @@
 //
 // =============================================================================
 
-/* Text truncation */
+// Text truncation
 @mixin text-shorten {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+// responsive
+@mixin large {
+  @media (max-width: $large-width) and (min-width: $medium-width+1) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: $medium-width) {
+    @content;
+  }
 }

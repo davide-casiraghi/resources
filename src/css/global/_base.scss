@@ -5,6 +5,7 @@
 //
 // =============================================================================
 
+
 *,
 *::before,
 *::after {
@@ -19,15 +20,22 @@
 html[data-theme='dark'] {
   background: $midnight;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .navbar,
 .main-wrapper {
   max-width: 1400px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .menu {
   padding-top: 42.5px !important;
+}
+
+.row {
+  margin-left: unset;
+  margin-right: unset;
 }

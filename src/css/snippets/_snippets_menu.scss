@@ -28,6 +28,24 @@
   }
 }
 
+// Navbar responsive
+@include medium {
+  .navbar {
+    padding: 0;
+  }
+  .navbar__items {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 30px;
+    flex-direction: row-reverse;
+  }
+
+  .navbar__toggle {
+    margin-right: 0;
+  }
+}
+
 // Navigation menu
 a.navbar__link {
   font-weight: 500;
@@ -73,9 +91,54 @@ a.navbar__link {
   }
 }
 
+/* Mobile menu */
+@include medium {
+
+  // mobile menu top area
+  .navbar-sidebar__brand {
+    padding: 0 30px;
+    justify-content: space-between;
+  }
+
+  // mobile menu top area DM
+  [data-theme="dark"]
+  .navbar-sidebar__brand {
+    border-bottom: 1px solid $shark;
+  }
+
+  // mobile menu links
+  .navbar .menu__link {
+    padding-left: 30px;
+  }
+
+  // mobile menu links
+  .navbar .menu {
+    padding-top: 15px !important;
+  }
+
+  // mobile menu backdrop LM + DM
+  .navbar-sidebar__backdrop {
+    background-color: rgba($midnight, 0.6);
+  }
+
+  // mobile menu DM
+  [data-theme="dark"] .navbar-sidebar {
+    background-color: $midnight;
+  }
+}
+
 /* Side menu */
+
+.menu_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
+  width: 265px;
+}
+
 ul.menu__list.menu__list {
   margin-left:0;
+
+  @include medium {
+    margin-bottom: 100px;
+  }
 }
 
 // Side link arrow collapsed
@@ -136,6 +199,107 @@ ul.menu__list.menu__list {
     a.menu__link.menu__link--sublist {
       color: $gray;
     }
+  }
+}
+
+// Side link categories - prevent from jumping when scrolled to bottom
+.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-:not(.menu--responsive) {
+  @include large {
+    position: fixed;
+  }
+}
+
+/* Side link categories mobile */
+.menu--responsive {
+  @include medium {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: -100%;
+    transition: left .2s;
+    z-index: 7000;
+    padding-top: 80px !important;
+    width: 80vw;
+    border: none;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+
+    // Side link categories header area
+    &:before {
+      content: "Table of contents";
+      position: absolute;
+      width: 80vw;
+      line-height: 60px;
+      top: 0;
+      left: 0;
+      transition: .2s;
+      border-bottom: 1px solid $grayLight;
+      padding-left: 30px;
+      font-weight: 600;
+    }
+
+    // Side link categories floating button
+    .menu__button {
+      right: 30px;
+      overflow: hidden;
+      width: 170px;
+      height: 35px;
+      svg, span {
+        display: none;
+      }
+      transition: .2s;
+    }
+
+    // Side link categories floating button text
+    .menu__button:before {
+      content: "Table of contents";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // Side link categories backdrop
+    .menu__button:after {
+      content: "";
+      position: fixed;
+      width: 20vw;
+      height: 100vw;
+      bottom: 0;
+      left: -100vw;
+      height: 100vh;
+      background: rgba($midnight, .6);
+      border-radius: 0;
+      border: 0;
+      opacity: 0;
+      transition-delay: .2s;
+      transition: opacity .3s
+    }
+  }
+}
+
+// Side link categories mobile --open
+.menu--responsive.menu--show {
+  @include medium {
+    left: 0;
+    transition: .2s;
+    .menu__button {
+      right: -100vw;
+    }
+
+    .menu__button:after {
+      left: 80vw;
+      opacity: 1;
+      transition-delay: .2s;
+    }
+  }
+}
+
+// Side link categories mobile DM
+[data-theme="dark"] .menu--responsive {
+  background-color: $midnight;
+  &:before {
+    border-color: $shark;
   }
 }
 
@@ -212,12 +376,12 @@ ul.menu__list.menu__list {
   }
 }
 
-  // Borders DM
-  [data-theme="dark"] {
-    .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
-    .table-of-contents.table-of-contents__left-border,
-    .col.col--3 {
-      border-color:$shark;
-    }
+// Borders DM
+[data-theme="dark"] {
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
+  .table-of-contents.table-of-contents__left-border,
+  .col.col--3 {
+    border-color:$shark;
   }
+}
 
