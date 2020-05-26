@@ -81,8 +81,6 @@ ul.menu__list.menu__list {
 // Side link arrow collapsed
 .menu__list-item--collapsed {
   .menu__link--sublist {
-    color:$gray;
-
     &:after {
       transform: rotateZ(0deg);
     }
@@ -92,7 +90,6 @@ ul.menu__list.menu__list {
 // Side link arrow active
 .menu__link--sublist {
   &::after {
-    color:$gray;
     background-image:url("/../../static/img/right-arrow.svg");
     background-size:1rem .8rem;
     background-repeat: no-repeat;
@@ -104,7 +101,6 @@ ul.menu__list.menu__list {
 // Side link categories
 .menu__list-item {
   a.menu__link.menu__link--sublist {
-    color:$gray;
     padding-right:0;
     font-weight: 600;
     font-size: convert(16, px, ems);
@@ -118,6 +114,13 @@ ul.menu__list.menu__list {
   }
 }
 
+// Side link categories collapsed
+.menu__list-item--collapsed {
+  a.menu__link.menu__link--sublist {
+    color: $gray;
+  }
+}
+
 // Side link categories DM
 [data-theme="dark"] {
   .menu__list-item {
@@ -127,6 +130,11 @@ ul.menu__list.menu__list {
       &:hover {
         color:$white;
       }
+    }
+  }
+  .menu__list-item--collapsed {
+    a.menu__link.menu__link--sublist {
+      color: $gray;
     }
   }
 }
@@ -161,7 +169,6 @@ ul.menu__list.menu__list {
 // Table of contents
 .table-of-contents__link {
   color:$space;
-
   &.table-of-contents__link--active {
     font-weight:bold;
   }

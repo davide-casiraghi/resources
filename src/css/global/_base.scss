@@ -17,7 +17,8 @@
 }
 
 html[data-theme='dark'] {
-  background: $midnight
+  background: $midnight;
+  font-size: 16px;
 }
 
 .navbar,
@@ -30,5 +31,3 @@ html[data-theme='dark'] {
 .menu {
   padding-top: 42.5px !important;
 }
-
-

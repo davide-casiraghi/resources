@@ -16,18 +16,10 @@
   padding-top: 42.5px !important;
   padding-left: 50px !important;
   padding-right: 50px !important;
-  a {
-    color: $space;
-  }
 }
 
-// main content DM
-[data-theme="dark"] {
-  .docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-    a {
-      color: $white;
-    }
-  }
+.docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- a {
+  color: $gray;
 }
 
 // snippet heading
