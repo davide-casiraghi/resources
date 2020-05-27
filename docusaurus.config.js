@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   title: 'Agiledrop Developer Resources',
   tagline: 'The tagline of my site',
@@ -6,6 +8,9 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'agiledrop', // Usually your GitHub org/user name.
   projectName: 'developer-resources', // Usually your repo name.
+    customFields: {
+    metadata: require("./metadata"),
+  },
   themeConfig: {
     navbar: {
       title: 'Agiledrop',
@@ -18,6 +23,11 @@ module.exports = {
           to: 'db_stuff/',
           activeBasePath: 'docs',
           label: 'Snippets',
+          position: 'left',
+        },
+        {
+          to: 'guides/',
+          label: "Guides",
           position: 'left',
         },
         {
@@ -78,25 +88,44 @@ module.exports = {
     // },
   },
   presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          routeBasePath: '/',
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'db_stuff',
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://bitbucket.org/agiledrop/developer_resources/src/master',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
-        },
-      },
-    ],
+    // [
+    //   '@docusaurus/preset-classic',
+    //   {
+    //     docs: {
+    //       routeBasePath: '/',
+    //       // It is recommended to set document id as docs home page (`docs/` path).
+    //       homePageId: 'db_stuff',
+    //       sidebarPath: require.resolve('./sidebars.js'),
+    //       // Please change this to your repo.
+    //       editUrl:
+    //         'https://bitbucket.org/agiledrop/developer_resources/src/master',
+    //     },
+    //     theme: {
+    //       customCss: require.resolve('./src/css/custom.scss'),
+    //     },
+    //   },
+    // ],
   ],
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        editUrl: 'https://bitbucket.org/agiledrop/developer_resources/src/master',
+        sidebarPath: require.resolve('./sidebars.js'),
+        routeBasePath: '/',
+        homePageId: 'db_stuff'
+      }
+    ],
+    ['@docusaurus/plugin-content-pages', {}],
+    path.resolve(__dirname, './plugins/guides'),
     ['docusaurus-plugin-sass']
+  ],
+  themes: [
+    [
+      '@docusaurus/theme-classic',
+      {
+        customCss: require.resolve('./src/css/custom.scss'),
+      },
+    ]
   ]
 };

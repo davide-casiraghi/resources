@@ -1,0 +1,11 @@
+{
+  "team": [
+    {
+      "avatar": "https://github.com/Xetro.png",
+      "bio": "Example bio with <a href=\"https://google.com\">Links</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt facilisis eros, et egestas risus pellentesque et",
+      "github": "https://github.com/Xetro",
+      "id": "xetro",
+      "name": "Xetro"
+    }
+  ]
+}
