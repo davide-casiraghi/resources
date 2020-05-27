@@ -21,7 +21,6 @@ function GuideItem(props) {
     isGuidePage = false,
   } = props;
 
-  console.log('props: ', props);
 
   const {categories, description, permalink, readingTime, seriesPosition, tags} = metadata;
   const {author_github, cover_label: coverLabel, last_modified_on: lastModifiedOn, title} = frontMatter;
@@ -36,7 +35,6 @@ function GuideItem(props) {
   const sinkName = sinkTag ? sinkTag.value : null;
 
   const {siteConfig} = useDocusaurusContext();
-  console.log('siteConfig:, ', siteConfig)
   // const {metadata: {installation, sources, sinks}} = siteConfig.customFields;
   // const {platforms} = installation;
   // const platform = platformName && platforms[platformName];

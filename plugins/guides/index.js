@@ -41,7 +41,6 @@ function pluginContentGuide(context, opts) {
             // Guides
             //
             guides = await guideUtils_1.generateGuides(contentPath, context, options);
-            console.log('guides:', guides);
             if (!guides.length) {
                 return null;
             }

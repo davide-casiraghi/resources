@@ -65,7 +65,6 @@ export default function pluginContentGuide(
       //
 
       guides = await generateGuides(contentPath, context, options);
-      console.log('guides:', guides);
       if (!guides.length) {
         return null;
       }
