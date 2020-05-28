@@ -18,6 +18,20 @@
 .navbar {
   box-shadow:none;
   border-bottom:1px solid $grayLighter;
+  height: 75px;
+  padding: 0;
+  &__brand {
+    width: 235px;
+    margin-right: 0;
+  }
+
+  &__logo {
+    max-width: 35vw;
+  }
+
+  &__title {
+    display: none;
+  }
 }
 
 // Navigation DM
@@ -28,16 +42,29 @@
   }
 }
 
+// Brand logo DM
+[data-theme="dark"] {
+  .navbar__brand {
+    &:before {
+      content: "";
+      background-image: url("/../../static/img/logo-DM.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+    .navbar__logo {
+      display: none;
+    }
+  }
+
+}
 // Navbar responsive
 @include medium {
-  .navbar {
-    padding: 0;
-  }
   .navbar__items {
     width: 100%;
     height: 100%;
     justify-content: space-between;
-    padding: 0 30px;
     flex-direction: row-reverse;
   }
 
@@ -55,6 +82,7 @@ a.navbar__link {
   margin:0 1em;
   transition: .3s;
 
+
   &::before {
     content:'';
     background-color:$space;
@@ -67,6 +95,7 @@ a.navbar__link {
     display: none;
   }
 
+  &--active,
   &:hover {
     color:$space;
 
@@ -98,11 +127,11 @@ a.navbar__link {
   .navbar-sidebar__brand {
     padding: 0 30px;
     justify-content: space-between;
+    height: $navbar-height;
   }
 
   // mobile menu top area DM
-  [data-theme="dark"]
-  .navbar-sidebar__brand {
+  [data-theme="dark"] .navbar-sidebar__brand {
     border-bottom: 1px solid $shark;
   }
 
@@ -113,7 +142,7 @@ a.navbar__link {
 
   // mobile menu links
   .navbar .menu {
-    padding-top: 15px !important;
+    padding-top: 20px !important;
   }
 
   // mobile menu backdrop LM + DM
@@ -139,6 +168,10 @@ ul.menu__list.menu__list {
   @include medium {
     margin-bottom: 100px;
   }
+}
+
+.navbar-sidebar__items {
+  padding: 0;
 }
 
 // Side link arrow collapsed
@@ -203,6 +236,14 @@ ul.menu__list.menu__list {
 }
 
 // Side link categories - prevent from jumping when scrolled to bottom
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  margin-top: -($navbar-height);
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
+  padding-top: $navbar-height;
+}
+
 .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-:not(.menu--responsive) {
   @include large {
     position: fixed;
@@ -219,17 +260,17 @@ ul.menu__list.menu__list {
     left: -100%;
     transition: left .2s;
     z-index: 7000;
-    padding-top: 80px !important;
+    padding-top: calc(#{$navbar-height} + 30px) !important;
     width: 80vw;
     border: none;
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
 
     // Side link categories header area
     &:before {
-      content: "Table of contents";
+      content: "Categories list";
       position: absolute;
       width: 80vw;
-      line-height: 60px;
+      line-height: $navbar-height;
       top: 0;
       left: 0;
       transition: .2s;
@@ -252,7 +293,7 @@ ul.menu__list.menu__list {
 
     // Side link categories floating button text
     .menu__button:before {
-      content: "Table of contents";
+      content: "Show categories";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -264,10 +305,9 @@ ul.menu__list.menu__list {
       content: "";
       position: fixed;
       width: 20vw;
-      height: 100vw;
+      height: 100vh;
       bottom: 0;
       left: -100vw;
-      height: 100vh;
       background: rgba($midnight, .6);
       border-radius: 0;
       border: 0;
@@ -331,6 +371,10 @@ ul.menu__list.menu__list {
 }
 
 // Table of contents
+.tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- .table-of-contents__left-border {
+  padding-top: 20px;
+}
+
 .table-of-contents__link {
   color:$space;
   &.table-of-contents__link--active {

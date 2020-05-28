@@ -23,7 +23,8 @@ html[data-theme='dark'] {
   box-sizing: border-box;
 }
 
-.navbar,
+.container,
+.navbar__inner,
 .main-wrapper {
   max-width: 1400px;
   width: 100%;
@@ -31,6 +32,11 @@ html[data-theme='dark'] {
   margin-right: auto;
 }
 
+.navbar__inner,
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
 .menu {
   padding-top: 42.5px !important;
 }
