@@ -17,6 +17,13 @@ html {
   color: $grayLighter
 }
 
+h1{
+  font-weight: 600;
+  font-size: convert(30, px , ems);
+  line-height: 37px;
+  margin-bottom: 14px;
+}
+
 h2 {
   font-weight: 600;
   font-size: convert(22, px, ems);

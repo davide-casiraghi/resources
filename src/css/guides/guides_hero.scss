@@ -1,0 +1,100 @@
+// hero container
+.hero {
+ padding: 42.5px 0;
+}
+
+// hero container DM
+[data-theme="dark"] .hero {
+  background-color: $midnight;
+}
+
+// hero subtitle
+.hero__subtitle {
+  font-weight: 500;
+  font-size: convert(14, px, ems);
+  line-height: convert(20, px, ems);
+  margin-bottom: 50px;
+  a {
+    color: $space;
+  }
+}
+
+// hero subtitle DM
+[data-theme="dark"] .hero__subtitle {
+  a {
+    color: $white;
+  }
+}
+
+// hero search box
+.hero__search {
+  position: relative;
+  margin-bottom: 15px;
+
+  // icon
+  &:before {
+    content: "";
+    position: absolute;
+    left: 42.5px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("/../../static/img/search.svg");
+    background-size: cover;
+  }
+
+  // input
+  .input--xl {
+    line-height: 44px;
+    padding: 0 85px;
+    font-size: convert(16, px, ems);
+    width: 500px;
+    max-width: 100%;
+    border: 1px solid $grayLighter;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border-radius: 10px;
+  }
+
+  // placeholder
+  input::placeholder {
+    color: $space;
+  }
+}
+
+// hero search box DM
+[data-theme="dark"] .hero__search {
+  // icon
+  &:before {
+    background-image: url("/../../static/img/search-DM.svg");
+  }
+
+  // input
+  .input--xl {
+    background-color: $midnight;
+    color: $white;
+  }
+
+  // placeholder
+  input::placeholder {
+    color: $white;
+  }
+}
+
+// hero search box mobile
+.hero__search {
+  @include small {
+
+    &:before {
+      left: unset;
+      right: 15px;
+    }
+    .input--xl {
+      width: 100%;
+      padding: 0 20px;
+      font-size: convert(12, px, ems);
+    }
+
+  }
+}

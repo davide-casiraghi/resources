@@ -1,33 +1,26 @@
 .guide-item {
-  background-color: var(--ifm-panel-border-color);
-  border-radius: 0.2em;
-  box-shadow: var(--ifm-panel-box-shadow);
+  border-radius: 0.8em;
+  box-shadow: 0 0 0 rgba(0,0,0, 0);
   color: var(--ifm-heading-color);
   display: block;
   height: 100%;
-  min-height: 17.5em;
-  padding: 0.1em;
+  min-height: 19em;
   position: relative;
-
-  transform-origin: 0 50%;
-  transform: perspective(1000px) rotateY(0deg) translate3d(0,0,0);
-  transition: all var(--ifm-transition-fast) ease;
   backface-visibility: hidden;
+  transition: .2s;
 }
 
-.guide-item > article {
-  background-color: var(--ifm-panel-background-color-solid);
-  border-radius: 0.2em;
+.guide-item article {
   height: 100%;
   position: relative;
 }
 
-.guide-item > article > div {
+.guide-item__inner {
   height: 100%;
   position: relative;
 }
 
-.guide-item > article > div > header {
+.guide-item header {
   border-bottom: 0px none;
   margin-bottom: 0;
   min-height: 50%;
@@ -37,19 +30,10 @@
   width: 100%;
 }
 
-.guide-item > article > div > header > .category {
-  color: var(--ifm-heading-color);
-  font-size: 0.75em;
-  font-weight: 500;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
-}
-
-.guide-item > article > div > header > h2 {
+.guide-item__title {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   display: -webkit-box;
-  font-family: var(--ifm-font-family-base);
   font-size: 1.1em;
   font-weight: 600;
   hyphens: auto;
@@ -58,27 +42,27 @@
   overflow: hidden;
 }
 
-.guide-item > article > div > footer {
+.guide-item footer {
   padding: 1em 1.25em;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.guide-item > article > div > footer > .logo {
+.guide-item .logo {
   margin-right: 10px;
 }
 
-.guide-item > article > div > footer > div.logo {
+.guide-item div.logo {
   font-size: 2.5em;
 }
 
-.guide-item > article > div > footer > svg.logo {
+.guide-item svg.logo {
   height: 3em;
   width: 3em;
 }
 
-.guide-item > article > div > footer > .action {
+.guide-item .action {
   font-size: 0.75em;
   font-weight: 600;
   margin-top: 0.5em;
@@ -114,24 +98,20 @@
 }
 
 .guide-item:hover {
-  background: linear-gradient( to right, rgba( var(--ifm-color-primary-rgb), 0.2 ), var(--ifm-color-primary) );
-  box-shadow: 0.4em 0 0.75em 0 rgba( var(--ifm-color-primary-rgb), 0.25 );
-  color: var(--ifm-color-primary);
+  color: unset;
   text-decoration: none;
-  transform: perspective(1000px) rotateY(-10deg) translate3d(-3px,0,0);
-  transform-origin: 0 50%;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
 }
 
-.guide-item:hover > article {
-  background-image: linear-gradient(to right, var(--ifm-panel-background-color-solid), var(--ifm-panel-background-color-solid-light) );
+.guide-item:hover article {
   color: inherit;
 }
 
-.guide-item:hover > article > div > header > * {
+.guide-item:hover * {
   color: inherit;
 }
 
-.guide-item:hover > article > div > footer > .action {
+.guide-item:hover .action {
   opacity: 1;
   top: 0;
 }

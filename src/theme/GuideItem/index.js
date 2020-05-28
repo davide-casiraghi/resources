@@ -60,10 +60,10 @@ function GuideItem(props) {
   return (
     <Link to={permalink + '/'} className={`guide-item`}>
       <article>
-        <div className={`domain-bg domain-bg--${domainBG} domain-bg--hover`}>
+        <div className={`guide-item__inner domain-bg domain-bg--${domainBG} domain-bg--hover`}>
           <header>
-            <div className="category">{categories[0].name}</div>
-            <h2 title={title}>{seriesPosition && (seriesPosition + '. ')}{coverLabel || title}</h2>
+            <div className="guide-item__category category">{categories[0].name}</div>
+            <h2 className="guide-item__title" title={title}>{seriesPosition && (seriesPosition + '. ')}{coverLabel || title}</h2>
           </header>
           <footer>
             {sourceLogoPath && <SVG src={sourceLogoPath} className="logo" />}
@@ -71,7 +71,7 @@ function GuideItem(props) {
             {sinkLogoPath && <SVG src={sinkLogoPath} className="logo" />}
             {!sinkLogoPath && sinkIcon && <div className="logo"><i className="feather icon-server" /></div>}
             {!sourceLogoPath && !sinkLogoPath && !sourceIcon && !sinkIcon && <Tags colorProfile="guides" tags={tags} />}
-            <div className="action">read now</div>
+            <div className="action">Read more</div>
           </footer>
         </div>
       </article>

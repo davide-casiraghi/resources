@@ -1,0 +1,145 @@
+// guides group
+.guides-group__title-area {
+  margin-bottom: 15px;
+}
+
+.guides-group .hash-link {
+  color: $white;
+}
+
+[data-theme="dark"] .guides-group .hash-link {
+  color: $gray;
+}
+
+.guides-group__title {
+  font-weight: 600;
+  font-size: convert(20, px, ems);
+  line-height: 1.2;
+  color: $gray;
+  text-transform: uppercase;
+}
+
+// guide items featured
+.guide-items--l {
+  .guide-item {
+    min-height: 24em;
+  }
+  .guide-item__title {
+    font-size: convert(26, px, ems);
+  }
+}
+
+.guide-items--staggered .guide-item:first-child{
+  .guide-item__title {
+    font-size: convert(26, px, ems);
+  }
+}
+
+// guide item
+.guide-item {
+  border: 1px solid $grayLighter;
+  .category {
+    color: $gray
+  }
+}
+
+// guide item DM
+[data-theme="dark"] .guide-item {
+  border-color: $grayMedium;
+}
+
+// guide item __ header container
+.guide-item header {
+  padding: 30px;
+}
+
+// guide item __ title tag
+.guide-item__title {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: convert(18, px, ems);
+  line-height: 1.5;
+  color: $space;
+}
+
+// guide item __ title tag DM
+[data-theme="dark"] .guide-item__title {
+  color: $white;
+}
+
+// guide item __ category tag
+.guide-item__category {
+  color: rgba($space, 0.4);
+  font-weight: 600;
+  font-size: convert(14, px, ems);
+  text-transform: uppercase;
+}
+
+// guide item __ category tag DM
+[data-theme="dark"] .guide-item__category {
+  color: rgba($grayLight, 0.5);
+}
+
+// guide item __ footer container
+.guide-item footer {
+  padding: 30px;
+}
+
+// guide item __ tags container
+.tags_src-components-Tags- {
+  display: none;
+}
+
+// guide item __ tag
+.guide-item .badge {
+  color: $gray;
+
+  &:hover {
+    color: $space;
+    text-decoration: none;
+  }
+}
+
+// guide item __ read more
+.guide-item .action {
+  text-align: right;
+  padding-right: 50px;
+  line-height: 30px;
+  top: 0;
+  opacity: 1;
+  text-decoration: none;
+  font-size: convert(14, px, ems);
+  text-transform: none;
+  font-weight: 500;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    right: 0;
+    background-image:url("/../../static/img/right-arrow-circle.svg");
+    background-size: cover;
+    color: $midnight;
+    width: 30px;
+    height: 30px;
+    transition: .2s;
+  }
+}
+
+// guide item DM __ read more
+[data-theme="dark"] .guide-item .action:before {
+  background-image: url("/../../static/img/right-arrow-circle--white.svg");
+}
+
+// guide item :hover __ read more
+.guide-item:hover .action {
+  &:before {
+    background-image:url("/../../static/img/right-arrow-circle--red.svg");
+  }
+}
+
+// guide item :hover DM
+[data-theme="dark"] .guide-item:hover {
+  background-color: $cloudy;
+  border-color: $cloudy;
+}

@@ -27,12 +27,14 @@ function Guides({filtering, items}) {
 
     return (
       <>
-        <section>
-          <GuideItems items={gettingStartedGuides} staggered={true} />
+        <section className="guides-group">
+          <GuideItems items={gettingStartedGuides}  staggered={true}/>
         </section>
-        <section>
-          <AnchoredH2 id={advancedCategory.permalink}>{advancedCategory.title}</AnchoredH2>
-          {advancedCategory.description && <div className="sub-title">{advancedCategory.description}</div>}
+        <section className="guides-group">
+          <div className="guides-group__title-area">
+            <AnchoredH2 className="guides-group__title" id={advancedCategory.permalink}>{advancedCategory.title}</AnchoredH2>
+            {advancedCategory.description && <div className="guides-group__subtitle">{advancedCategory.description}</div>}
+          </div>
           <GuideItems items={advancedGuides} large={true} />
         </section>
       </>
@@ -78,15 +80,15 @@ function GuideListPage(props) {
       <header className="hero hero--clean">
         <div className="container">
           <h1>Agiledrop Guides</h1>
-          <div className="hero--subtitle">
+          <div className="hero__subtitle">
             Thoughtful guides to help you with development process. Created and curated by the <Link to="https://www.agiledrop.com/team">Agiledrop team</Link>.
           </div>
-          <div className="hero--search">
+          <div className="hero__search">
             <input
               type="text"
               className="input--text input--xl"
               onChange={(event) => setSearchTerm(event.currentTarget.value)}
-              placeholder="🔍 Search by guide name or tag..." />
+              placeholder="Search by guide name or a tag" />
           </div>
         </div>
       </header>

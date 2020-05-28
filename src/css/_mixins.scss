@@ -24,3 +24,9 @@
     @content;
   }
 }
+
+@mixin small {
+  @media (max-width: $small-width) {
+    @content;
+  }
+}
