@@ -387,6 +387,11 @@ ul.menu__list.menu__list {
       font-weight:bold;
       background-color:transparent;
     }
+
+    &:hover {
+      background: none;
+      text-decoration: underline;
+    }
   }
 }
 
