@@ -293,6 +293,7 @@ ul.menu__list.menu__list {
 
     // Side link categories floating button
     .menu__button {
+      font-family: Montserrat;
       right: 30px;
       overflow: hidden;
       width: 170px;
@@ -301,9 +302,17 @@ ul.menu__list.menu__list {
         display: none;
       }
       transition: .2s;
+      background-color: $midnight;
+      color: $grayLighter;
     }
 
-    // Side link categories floating button text
+    // Side link categories floating button --hover
+    .menu__button:hover {
+      border: none;
+      background-color: rgba($midnight, .9);
+    }
+
+      // Side link categories floating button text
     .menu__button:before {
       content: "Show categories";
       position: absolute;
