@@ -306,6 +306,7 @@ ul.menu__list.menu__list {
       transition: .2s;
       background-color: $midnight;
       color: $grayLighter;
+      border: none;
     }
 
     // Side link categories floating button --hover
@@ -363,6 +364,16 @@ ul.menu__list.menu__list {
   background-color: $midnight;
   &:before {
     border-color: $shark;
+  }
+
+  // Side link categories floating button DM
+  .menu__button {
+    background-color: $shark;
+  }
+
+  // Side link categories floating button --hover DM
+  .menu__button:hover {
+    background-color: rgba($shark, 0.6);
   }
 }
 
