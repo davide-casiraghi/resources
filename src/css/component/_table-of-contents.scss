@@ -1,0 +1,60 @@
+// Table of contents wrapper sticky
+.tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-{
+  top: $navbar-height;
+}
+// Table of contents
+.table-of-contents {
+  padding: 0;
+  top: 75px;
+  padding-top: 50px;
+  border-left: none;
+
+  &__link {
+    color: $space;
+    line-height: 1.5;
+  }
+
+  &__link:hover {
+    color:$space;
+    text-decoration: underline;
+  }
+
+  &__link--active {
+    font-weight:bold;
+  }
+
+  .title {
+    font-weight: 700;
+    color: $gray;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 17px;
+  }
+
+  .contents {
+    padding-left: 0;
+  }
+
+  li {
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+
+}
+
+// Table of contents DM
+[data-theme="dark"] {
+
+  .table-of-contents__link {
+    color:rgba(255,255,255, 0.5);
+
+    &.table-of-contents__link--active,
+    &:hover {
+      color:rgba(255,255,255, 1);
+      text-decoration: none;
+    }
+    &.table-of-contents__link--active {
+      font-weight:bold;
+    }
+  }
+}

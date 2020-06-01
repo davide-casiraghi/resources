@@ -28,14 +28,14 @@ function Guides({filtering, items}) {
     return (
       <>
         <section className="guides-group">
-          <GuideItems items={gettingStartedGuides}  staggered={true}/>
+          <GuideItems items={gettingStartedGuides}  staggered={false}/>
         </section>
         <section className="guides-group">
           <div className="guides-group__title-area">
             <AnchoredH2 className="guides-group__title" id={advancedCategory.permalink}>{advancedCategory.title}</AnchoredH2>
             {advancedCategory.description && <div className="guides-group__subtitle">{advancedCategory.description}</div>}
           </div>
-          <GuideItems items={advancedGuides} large={true} />
+          <GuideItems items={advancedGuides} large={false} />
         </section>
       </>
     );

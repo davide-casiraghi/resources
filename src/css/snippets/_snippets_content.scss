@@ -6,6 +6,11 @@
 // =============================================================================
 
 
+// main wrapper inner
+.docPage_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  padding: 0 30px;
+}
+
 // main content + sidebar wrapper
 .docItemWrapper_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
   padding: 0 !important;
@@ -30,27 +35,20 @@
   padding-right: 50px !important;
 
   @include medium {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 
 .docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-{
-  a {
-    color: $gray;
-  }
-
   @include medium {
     padding: 0
   }
 }
 
-// snippet heading
-.markdown > h2 {
-  margin-top: 50px;
-  margin-bottom: 25px;
-}
 
+
+// snippet heading
 .docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
   font-size: convert(30, px, ems);
   line-height: 37px;
@@ -58,14 +56,15 @@
   margin-bottom: 10px;
 }
 
-.markdown > *:first-child {
+// snippet heading caption
+.markdown > p:first-child {
   font-weight: 500;
   font-size: convert(16, px, ems);
   line-height: 20px;
   margin-bottom: 60px;
 }
 
+// snippet heading caption DM
 [data-theme="dark"] .markdown > *:first-child {
   opacity: .5;
 }
-

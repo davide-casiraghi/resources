@@ -1,0 +1,49 @@
+// avatar wrapper
+.avatar_src-theme-GuidePage- {
+  border-radius: 0;
+  border-bottom: 1px solid $grayLighter;
+  padding: 50px 0 55px 0;
+  margin-bottom: 0;
+
+  // avatar inner
+  .avatar {
+    margin-top: 0;
+  }
+
+  @include medium {
+    padding-top: 0;
+    padding-bottom: 42.5px;
+  }
+}
+
+// avatar content
+.avatar {
+
+  // avatar photo
+  &__photo {
+    min-width: 100px;
+    height: 100px;
+    border-radius: 0;
+  }
+
+  // avatar name
+  &__name a {
+    font-size: convert(20, px, ems);
+    font-weight: 600;
+    color: $space;
+  }
+}
+
+// avatar DM
+[data-theme="dark"] {
+
+  // avatar wrapper
+  .avatar_src-theme-GuidePage- {
+    border-color: $shark;
+  }
+
+  // avatar name
+  .avatar__name a {
+    color: $grayLighter;
+  }
+}

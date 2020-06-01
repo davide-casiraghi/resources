@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import './styles.css';
 
+// function Avatar({bio, className, github, nameSuffix, rel, size, subTitle, vertical}) {
 function Avatar({bio, className, github, nameSuffix, rel, size, subTitle, vertical}) {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;

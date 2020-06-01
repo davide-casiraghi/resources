@@ -1,0 +1,57 @@
+// sidebar left
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
+.sidebar_src-theme-GuidePage-:first-child {
+  min-width: 265px;
+  padding-right: 50px;
+  border-right: 1px solid $grayLighter;
+}
+
+// sidebar left -- guide
+.sidebar_src-theme-GuidePage-:first-child {
+  @include medium {
+    border-right: none;
+    padding: 42.5px 0;
+    border-bottom: 1px solid $grayLighter;
+  }
+}
+
+// sidebar right -- guide
+.sidebar_src-theme-GuidePage-:last-child {
+  border-left: 1px solid $grayLighter;
+  padding-left: 50px;
+  @include medium{
+    display: none;
+  }
+}
+
+// sidebar right -- snippets
+.row {
+  .col.col--3 {
+    border-left: 1px solid $grayLighter;
+    padding-left: 50px;
+    padding-right: 0;
+  }
+}
+
+// sidebar DM
+[data-theme="dark"] {
+  .sidebar_src-theme-GuidePage- {
+    border-color: $shark;
+  }
+}
+
+// sidebar borders DM
+[data-theme="dark"] {
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
+  .col.col--3 {
+    border-color: $shark;
+  }
+}
+
+// sidebar left -- responsive -- large
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
+.sidebar_src-theme-GuidePage-:first-child {
+  @include large {
+    padding-right: 30px;
+  }
+}

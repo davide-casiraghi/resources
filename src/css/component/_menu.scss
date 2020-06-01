@@ -20,8 +20,9 @@
   border-bottom:1px solid $grayLighter;
   height: 75px;
   padding: 0;
+
   &__brand {
-    width: 235px;
+    width: 265px;
     margin-right: 0;
   }
 
@@ -31,6 +32,10 @@
 
   &__title {
     display: none;
+  }
+
+  a.navbar__link{
+    margin: 0 2em 0 0;
   }
 }
 
@@ -159,7 +164,8 @@ a.navbar__link {
 /* Side menu */
 
 .menu_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
-  width: 265px;
+  min-width: 265px;
+  padding: 0 42.5px 0 0;
 }
 
 ul.menu__list.menu__list {
@@ -168,6 +174,11 @@ ul.menu__list.menu__list {
   @include medium {
     margin-bottom: 100px;
   }
+
+}
+
+.menu__link {
+  padding-left: 0;
 }
 
 .navbar-sidebar__items {
@@ -197,7 +208,7 @@ ul.menu__list.menu__list {
 // Side link categories
 .menu__list-item {
   a.menu__link.menu__link--sublist {
-    padding-right:0;
+    padding-right: 10px;
     font-weight: 600;
     font-size: convert(16, px, ems);
     text-transform: uppercase;
@@ -261,6 +272,7 @@ ul.menu__list.menu__list {
     transition: left .2s;
     z-index: 7000;
     padding-top: calc(#{$navbar-height} + 30px) !important;
+    padding-left: 30px;
     width: 80vw;
     border: none;
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
@@ -367,65 +379,6 @@ ul.menu__list.menu__list {
         color:rgba(255,255,255, 1);
       }
     }
-  }
-}
-
-// Table of contents
-.tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- .table-of-contents__left-border {
-  padding-top: 20px;
-}
-
-.table-of-contents__link {
-  color:$space;
-  &.table-of-contents__link--active {
-    font-weight:bold;
-  }
-
-  &:hover {
-    color:$space;
-    text-decoration: underline;
-  }
-}
-
-// Table of contents DM
-[data-theme="dark"] {
-  .table-of-contents__link {
-    color:rgba(255,255,255, 0.5);
-
-    &.table-of-contents__link--active,
-    &:hover {
-      color:rgba(255,255,255, 1);
-      text-decoration: none;
-    }
-    &.table-of-contents__link--active {
-      font-weight:bold;
-    }
-  }
-}
-
-// Borders
-.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
-  border-right:1px solid $grayLighter;
-}
-
-.tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-  .table-of-contents__left-border {
-    border-left:none;
-  }
-}
-
-.row {
-  .col.col--3 {
-    border-left: 1px solid $grayLighter;
-  }
-}
-
-// Borders DM
-[data-theme="dark"] {
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
-  .table-of-contents.table-of-contents__left-border,
-  .col.col--3 {
-    border-color:$shark;
   }
 }
 

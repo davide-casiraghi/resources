@@ -1,43 +1,8 @@
-// guides group
-.guides-group__title-area {
-  margin-bottom: 15px;
-}
-
-.guides-group .hash-link {
-  color: $white;
-}
-
-[data-theme="dark"] .guides-group .hash-link {
-  color: $gray;
-}
-
-.guides-group__title {
-  font-weight: 600;
-  font-size: convert(20, px, ems);
-  line-height: 1.2;
-  color: $gray;
-  text-transform: uppercase;
-}
-
-// guide items featured
-.guide-items--l {
-  .guide-item {
-    min-height: 24em;
-  }
-  .guide-item__title {
-    font-size: convert(26, px, ems);
-  }
-}
-
-.guide-items--staggered .guide-item:first-child{
-  .guide-item__title {
-    font-size: convert(26, px, ems);
-  }
-}
-
 // guide item
 .guide-item {
   border: 1px solid $grayLighter;
+
+  // guide category
   .category {
     color: $gray
   }
@@ -112,6 +77,7 @@
   text-transform: none;
   font-weight: 500;
 
+  // icon
   &:before {
     content: "";
     position: absolute;
@@ -142,4 +108,26 @@
 [data-theme="dark"] .guide-item:hover {
   background-color: $cloudy;
   border-color: $cloudy;
+}
+
+// guide items featured
+.guide-items--l {
+
+  // item wrapper
+  .guide-item {
+    min-height: 24em;
+  }
+
+  // item title
+  .guide-item__title {
+    font-size: convert(26, px, ems);
+  }
+}
+
+// guide items -- staggered
+.guide-items--staggered .guide-item:first-child{
+  // item title
+  .guide-item__title {
+    font-size: convert(26, px, ems);
+  }
 }

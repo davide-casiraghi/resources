@@ -31,6 +31,14 @@ h2 {
   margin-top: 44px;
 }
 
+
+// content title
+.markdown > h2 {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+
 h3 {
   font-weight: 600;
   font-size: convert(20, px, ems);
@@ -38,3 +46,11 @@ h3 {
   margin-top: 44px;
 }
 
+a {
+  color: rgba($midnight, 0.6);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

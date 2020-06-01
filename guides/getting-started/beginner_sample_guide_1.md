@@ -29,6 +29,7 @@ dici, sit et Atlas, unum quae; terras? Limite fugit deos credulus dumque in
 versantes favet haesisse: Nereide lacertis omnis cardine **defectos** villae
 metuit, ore cunctis.
 
+``` php
     if (open_dns_bar) {
         coldWord.card_secondary_file += hit_gigahertz_unit(
                 seo_active_blu.kindle_sli_backside(server,
@@ -40,6 +41,7 @@ metuit, ore cunctis.
     }
     systemVolume -= staticClone.debug(application_controller_teraflops);
     word /= smm_camera(simmFavorites);
+```
 
 Ales dixit sed *illis gerebant* poteratque et per credula dixit, aequora domus,
 virtute. Rescindere vulnus animus pudorque quid spectant felle cui at caris

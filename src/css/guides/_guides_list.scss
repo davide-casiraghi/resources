@@ -1,0 +1,20 @@
+// guides group
+.guides-group__title-area {
+  margin-bottom: 15px;
+}
+
+.guides-group .hash-link {
+  color: $white;
+}
+
+[data-theme="dark"] .guides-group .hash-link {
+  color: $gray;
+}
+
+.guides-group__title {
+  font-weight: 600;
+  font-size: convert(20, px, ems);
+  line-height: 1.2;
+  color: $gray;
+  text-transform: uppercase;
+}

@@ -1,0 +1,19 @@
+.article_src-theme-GuidePage- {
+  max-width: calc( 100% - 465px );
+
+  @include medium {
+    max-width: unset;
+  }
+}
+
+.container_src-theme-GuidePage- {
+  margin-top: 0;
+}
+
+.article_src-theme-GuidePage- {
+  padding: 0px 50px;
+
+  @include medium {
+    padding: 0;
+  }
+}

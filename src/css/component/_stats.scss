@@ -1,0 +1,57 @@
+// stats
+.stats {
+  padding-top: 30px;
+
+  // stats title
+  .title {
+    font-family: Montserrat;
+    font-size: convert(16, px, ems);
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba($space, .5);
+  }
+
+  // stats text
+  .text {
+    color: inherit;
+    font-size: convert(16,px, ems) ;
+  }
+
+  @include medium {
+    padding-top: 42.5px;
+  }
+}
+
+// stats DM
+[data-theme="dark"] .stats {
+
+  // stats title
+  .title {
+    color: $grayLighter;
+  }
+
+  // stats text
+  .text {
+    color: rgba($white, 0.5);
+  }
+
+}
+
+
+// stats responsive --large
+.stats {
+  @include large {
+    // stats title
+    .title {
+      font-size: convert(14, px, ems);
+    }
+
+    // stats text
+    .text {
+      color: inherit;
+      font-size: convert(14,px, ems) ;
+    }
+  }
+}
