@@ -165,7 +165,8 @@ a.navbar__link {
 
 .menu_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
   min-width: 265px;
-  padding: 0 42.5px 0 0;
+  padding: 0 42.5px 42.5px 0;
+  overflow-x: hidden;
 }
 
 ul.menu__list.menu__list {
@@ -253,6 +254,7 @@ ul.menu__list.menu__list {
 
 .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
   padding-top: $navbar-height;
+  overflow-x: hidden;
 }
 
 .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-:not(.menu--responsive) {

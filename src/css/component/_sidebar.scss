@@ -2,12 +2,12 @@
 .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
 .sidebar_src-theme-GuidePage-:first-child {
   min-width: 265px;
-  padding-right: 50px;
   border-right: 1px solid $grayLighter;
 }
 
 // sidebar left -- guide
 .sidebar_src-theme-GuidePage-:first-child {
+  padding-right: 50px;
   @include medium {
     border-right: none;
     padding: 42.5px 0;
