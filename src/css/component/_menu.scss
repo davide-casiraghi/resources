@@ -62,8 +62,8 @@
       display: none;
     }
   }
-
 }
+
 // Navbar responsive
 @include medium {
   .navbar__items {
@@ -162,9 +162,9 @@ a.navbar__link {
 }
 
 /* Side menu */
-
 .menu_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
   min-width: 265px;
+  width: 265px;
   padding: 0 42.5px 42.5px 0;
   overflow-x: hidden;
 }
@@ -175,7 +175,6 @@ ul.menu__list.menu__list {
   @include medium {
     margin-bottom: 100px;
   }
-
 }
 
 .menu__link {
@@ -244,22 +243,6 @@ ul.menu__list.menu__list {
     a.menu__link.menu__link--sublist {
       color: $gray;
     }
-  }
-}
-
-// Side link categories - prevent from jumping when scrolled to bottom
-.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
-  margin-top: -($navbar-height);
-}
-
-.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
-  padding-top: $navbar-height;
-  overflow-x: hidden;
-}
-
-.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-:not(.menu--responsive) {
-  @include large {
-    position: fixed;
   }
 }
 

@@ -1,13 +1,42 @@
-// sidebar left
-.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage-,
-.sidebar_src-theme-GuidePage-:first-child {
-  min-width: 265px;
-  border-right: 1px solid $grayLighter;
+// sidebar left -- snippets
+.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
+  padding-top: 0;
+  margin-top: $navbar-height;
+  height: calc(100vh - #{$navbar-height});
+  overflow-x: hidden;
+  top: 75px; // position sticky in default styles
+  @include medium {
+    height: 0;
+  }
+}
+
+// sidebar left -- snippets DM
+[data-theme="dark"] .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
+  border-color: $shark;
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-:not(.menu--responsive) {
+  @include large {
+    position: fixed;
+    top: 0;
+  }
 }
 
 // sidebar left -- guide
 .sidebar_src-theme-GuidePage-:first-child {
+  width: 265px;
+  min-width: 265px;
+  border-right: 1px solid $grayLighter;
+  overflow-y: auto;
+  height: 100%;
   padding-right: 50px;
+
+  @include  large {
+    position: sticky;
+    top: $navbar-height;
+  }
+
+
   @include medium {
     border-right: none;
     padding: 42.5px 0;
@@ -19,7 +48,12 @@
 .sidebar_src-theme-GuidePage-:last-child {
   border-left: 1px solid $grayLighter;
   padding-left: 50px;
-  @include medium{
+
+  @include large {
+    padding-left: 30px;
+  }
+
+  @include medium {
     display: none;
   }
 }
@@ -30,6 +64,10 @@
     border-left: 1px solid $grayLighter;
     padding-left: 50px;
     padding-right: 0;
+
+    @include large {
+      padding-left: 30px;
+    }
   }
 }
 
@@ -54,4 +92,9 @@
   @include large {
     padding-right: 30px;
   }
+}
+
+// Side link categories - prevent from jumping when scrolled to bottom
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  margin-top: -($navbar-height);
 }

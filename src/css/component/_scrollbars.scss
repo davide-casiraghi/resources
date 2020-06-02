@@ -1,6 +1,6 @@
 // snippets scrollbars
 .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-,
-.codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock-{
+.codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
 
   &::-webkit-scrollbar-track-piece:start {
     background-color: $white;
@@ -17,7 +17,6 @@
     width: 6px;
     height: 6px;
     background-color: $grayLight;
-
   }
 
   &::-webkit-scrollbar-thumb {
@@ -27,12 +26,10 @@
   }
 }
 
-
 // snippets DM
 [data-theme="dark"] {
   .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-,
   .codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock-{
-
     &::-webkit-scrollbar-track-piece:start {
       background-color: $midnight;
     }

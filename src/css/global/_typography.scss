@@ -47,9 +47,9 @@ h3 {
 }
 
 a {
-  color: rgba($midnight, 0.6);
+  color: $gray;
   text-decoration: none;
-
+  transition: .2s;
   &:hover {
     text-decoration: none;
   }

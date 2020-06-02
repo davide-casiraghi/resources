@@ -1,6 +1,9 @@
 // Table of contents wrapper sticky
 .tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-{
+  position: sticky;
   top: $navbar-height;
+  max-height: unset;
+  padding-bottom: 50px;
 }
 // Table of contents
 .table-of-contents {
@@ -12,6 +15,10 @@
   &__link {
     color: $space;
     line-height: 1.5;
+
+    + ul {
+      padding-top: 20px;
+    }
   }
 
   &__link:hover {
