@@ -7,9 +7,8 @@
 
 // Background DM
 [data-theme="dark"] {
-  .sidebar_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar-,
-  .navbar,
-  .docMainContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  [class*="sidebar"],
+  [class*="docMainContainer"] {
     background-color:$midnight;
   }
 }
@@ -52,7 +51,7 @@
   .navbar__brand {
     &:before {
       content: "";
-      background-image: url("/../../static/img/logo-DM.svg");
+      background-image: url("/img/logo-DM.svg");
       background-size: contain;
       background-repeat: no-repeat;
       width: 100%;
@@ -162,7 +161,7 @@ a.navbar__link {
 }
 
 /* Side menu */
-.menu_node_modules-\@docusaurus-theme-classic-src-theme-DocSidebar- {
+.menu {
   min-width: 265px;
   width: 265px;
   padding: 0 42.5px 42.5px 0;
@@ -175,6 +174,11 @@ ul.menu__list.menu__list {
   @include medium {
     margin-bottom: 100px;
   }
+}
+
+.menu__list-item {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .menu__link {
@@ -197,7 +201,7 @@ ul.menu__list.menu__list {
 // Side link arrow active
 .menu__link--sublist {
   &::after {
-    background-image:url("/../../static/img/right-arrow.svg");
+    background-image:url("/img/right-arrow.svg");
     background-size:1rem .8rem;
     background-repeat: no-repeat;
     transform: rotate(90deg);
@@ -298,7 +302,7 @@ ul.menu__list.menu__list {
       background-color: rgba($midnight, .9);
     }
 
-      // Side link categories floating button text
+    // Side link categories floating button text
     .menu__button:before {
       content: "Show categories";
       position: absolute;
@@ -351,12 +355,13 @@ ul.menu__list.menu__list {
 
   // Side link categories floating button DM
   .menu__button {
-    background-color: $shark;
+    background-color: $grayLight;
+    color: $midnight;
   }
 
   // Side link categories floating button --hover DM
   .menu__button:hover {
-    background-color: rgba($shark, 0.6);
+    background-color: $gray;
   }
 }
 
@@ -378,6 +383,12 @@ ul.menu__list.menu__list {
   }
 }
 
+// root page active sidebar item
+.menu__link--active:not(.menu__link--sublist) {
+  background: none;
+  font-weight: 700;
+}
+
 // Child items Side menu DM
 [data-theme="dark"] {
   .menu__list-item {
@@ -390,5 +401,8 @@ ul.menu__list.menu__list {
       }
     }
   }
-}
 
+  .menu__link--active:not(.menu__link--sublist) {
+    color: $white;
+  }
+}

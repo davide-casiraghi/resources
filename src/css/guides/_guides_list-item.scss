@@ -50,21 +50,6 @@
   padding: 30px;
 }
 
-// guide item __ tags container
-.tags_src-components-Tags- {
-  display: none;
-}
-
-// guide item __ tag
-.guide-item .badge {
-  color: $gray;
-
-  &:hover {
-    color: $space;
-    text-decoration: none;
-  }
-}
-
 // guide item __ read more
 .guide-item .action {
   text-align: right;
@@ -83,7 +68,7 @@
     position: absolute;
     height: 100%;
     right: 0;
-    background-image:url("/../../static/img/right-arrow-circle.svg");
+    background-image:url("/img/right-arrow-circle.svg");
     background-size: cover;
     color: $midnight;
     width: 30px;
@@ -94,13 +79,13 @@
 
 // guide item DM __ read more
 [data-theme="dark"] .guide-item .action:before {
-  background-image: url("/../../static/img/right-arrow-circle--white.svg");
+  background-image: url("/img/right-arrow-circle--white.svg");
 }
 
 // guide item :hover __ read more
 .guide-item:hover .action {
   &:before {
-    background-image:url("/../../static/img/right-arrow-circle--red.svg");
+    background-image:url("/img/right-arrow-circle--red.svg");
   }
 }
 

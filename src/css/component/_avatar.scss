@@ -1,8 +1,8 @@
 // avatar wrapper
-.avatar_src-theme-GuidePage- {
+[class*="sidebar_"] > [class*="avatar_"] {
   border-radius: 0;
   border-bottom: 1px solid $grayLighter;
-  padding: 50px 0 55px 0;
+  padding: 50px 0 60px 0;
   margin-bottom: 0;
 
   // avatar inner
@@ -18,12 +18,14 @@
 
 // avatar content
 .avatar {
+  align-items: flex-start;
 
   // avatar photo
   &__photo {
     min-width: 100px;
     height: 100px;
     border-radius: 0;
+    margin-bottom: 30px;
   }
 
   // avatar name
@@ -32,13 +34,26 @@
     font-weight: 600;
     color: $space;
   }
+
+  @include medium {
+    flex-direction: row;
+    align-items: center;
+
+    &__photo {
+      margin-bottom: 0;
+    }
+    &__name {
+      text-align: left;
+      padding-left: 30px;
+    }
+  }
 }
 
 // avatar DM
 [data-theme="dark"] {
 
   // avatar wrapper
-  .avatar_src-theme-GuidePage- {
+  [class*="sidebar_"] > [class*="avatar_"] {
     border-color: $shark;
   }
 

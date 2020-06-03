@@ -1,0 +1,21 @@
+// tags wrapper
+[class*="tags"] {
+  display: block;
+  margin-top: 30px;
+}
+
+// tags -- guide list item
+.guide-item [class*="tags"] {
+  margin-bottom: 30px;
+}
+
+// tag
+.badge {
+  color: $gray;
+  margin-right: 0;
+  border: 1px solid $gray;
+  &:hover {
+    color: $space;
+    text-decoration: none;
+  }
+}

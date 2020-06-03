@@ -1,19 +1,10 @@
-.article_src-theme-GuidePage- {
+[class*="article"] {
   max-width: calc( 100% - 465px );
+  padding: 0px 50px;
+  margin-top: 0;
 
   @include medium {
     max-width: unset;
-  }
-}
-
-.container_src-theme-GuidePage- {
-  margin-top: 0;
-}
-
-.article_src-theme-GuidePage- {
-  padding: 0px 50px;
-
-  @include medium {
     padding: 0;
   }
 }

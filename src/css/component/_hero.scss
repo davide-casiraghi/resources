@@ -15,11 +15,6 @@
     font-weight: 700;
     font-size: convert(20, px, ems);
   }
-
-  &--category a {
-    color: inherit;
-  }
-
 }
 
 // hero container DM
@@ -37,16 +32,6 @@
   font-size: convert(14, px, ems);
   line-height: convert(20, px, ems);
   margin-bottom: 50px;
-  a {
-    color: $space;
-  }
-}
-
-// hero subtitle DM
-[data-theme="dark"] .hero__subtitle {
-  a {
-    color: $white;
-  }
 }
 
 // hero search box
@@ -63,7 +48,7 @@
     transform: translate(0, -50%);
     width: 20px;
     height: 20px;
-    background-image: url("/../../static/img/search.svg");
+    background-image: url("/img/search.svg");
     background-size: cover;
   }
 
@@ -91,7 +76,8 @@
 
   // icon
   &:before {
-    background-image: url("/../../static/img/search-DM.svg");
+    //background-image: url("/img/search-DM.svg");
+    background-image: url("/img/search-DM.svg");
   }
 
   // input

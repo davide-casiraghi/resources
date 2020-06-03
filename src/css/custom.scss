@@ -22,11 +22,11 @@
 // Design components are reusable styling that can be applied using just the CSS
 // class names specified in the component. Also known as design 'modules'.
 @import "snippets/snippets_content";
-@import "component/codeblock";
-@import "component/codeblock-syntax";
 @import "guides/guides_list";
 @import "guides/guides_list-item";
 @import "guides/guide_page";
+@import "component/codeblock";
+@import "component/codeblock-syntax";
 @import "component/scrollbars";
 @import "component/header";
 @import "component/sidebar";
@@ -36,4 +36,5 @@
 @import "component/stats";
 @import "component/hero";
 @import "component/table-of-contents";
+@import "component/tags";
 

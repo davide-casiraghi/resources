@@ -1,10 +1,11 @@
 // Table of contents wrapper sticky
-.tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem-{
+[class*="tableOfContents"] {
   position: sticky;
   top: $navbar-height;
   max-height: unset;
   padding-bottom: 50px;
 }
+
 // Table of contents
 .table-of-contents {
   padding: 0;

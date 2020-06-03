@@ -36,6 +36,7 @@ h2 {
 .markdown > h2 {
   margin-top: 50px;
   margin-bottom: 25px;
+  font-size: convert(25, px, ems);
 }
 
 
@@ -52,5 +53,17 @@ a {
   transition: .2s;
   &:hover {
     text-decoration: none;
+    color: #37b5ff;
+    color: $red;
   }
+}
+
+::selection {
+  background-color: $red;
+  color: $white;
+}
+
+[data-theme="dark"] ::selection {
+  background-color: $grayLight;
+  color: $midnight
 }

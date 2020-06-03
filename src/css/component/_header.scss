@@ -6,7 +6,6 @@
 // =============================================================================
 
 // Theme toggle
-
 .react-toggle-track {
   height: 19.5px;
   width: 33px;
@@ -36,11 +35,16 @@
   border-color: $space;
 }
 
-.toggle_node_modules-\@docusaurus-theme-classic-src-theme-Toggle-:before {
-  display: none;
+// disable :active style
+.react-toggle--active .react-toggle-thumb ,
+.react-toggle--focus .react-toggle-thumb {
+  box-shadow: none;
 }
 
-.react-toggle--active .react-toggle-thumb ,
-  .react-toggle--focus .react-toggle-thumb {
-  box-shadow: none;
+// hide icons
+.react-toggle-track-x,
+.react-toggle-track-check {
+  span:before {
+    display: none;
+  }
 }

@@ -9,6 +9,7 @@
 
 .sidebar {
   width: var(--ifm-sidebar-width);
+  min-width: var(--ifm-sidebar-width);
 }
 
 .avatar {

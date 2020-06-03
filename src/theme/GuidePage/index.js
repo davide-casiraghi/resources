@@ -179,7 +179,7 @@ function GuidePage(props) {
               size="lg"
               rel="author"
               subTitle={false}
-              vertical={false} />
+              vertical={true} />
           </section>
             <section className="stats">
               <div className="title">Stats</div>

@@ -23,6 +23,10 @@ html[data-theme='dark'] {
   box-sizing: border-box;
 }
 
+.container {
+  margin-top: 0;
+}
+
 .container,
 .navbar__inner,
 .main-wrapper {

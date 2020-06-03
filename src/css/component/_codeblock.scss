@@ -1,7 +1,8 @@
 // codeblock
-.codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+[class*="codeBlockLines"] {
   border-radius: 5px;
   background-color: $grayLighter !important;
+
   .token-line {
     color: $space !important;
     line-height: 1.5;
@@ -12,13 +13,10 @@
   }
 }
 
-
 // codeblock DM
-[data-theme="dark"] {
-  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
-    background-color: $cloudy !important;
-    .token-line {
-      color: $grayDark !important;
-    }
+[data-theme="dark"] [class*="codeBlockLines"] {
+  background-color: $cloudy !important;
+  .token-line {
+    color: $grayDark !important;
   }
 }

@@ -1,5 +1,5 @@
 html:not([data-theme="dark"]) {
-  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- .token{
+  .prism-code .token{
 
     &.punctuation,
     &.variable,
@@ -46,7 +46,7 @@ html:not([data-theme="dark"]) {
 }
 
 html[data-theme="dark"] {
-  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- .token{
+  .prism-code .token{
 
     &.atrule,
     &.package,
