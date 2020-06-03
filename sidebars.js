@@ -1,6 +1,6 @@
 module.exports = {
   snippetsSidebar: {
-    Snippets: [
+    "Drupal": [
       "db_stuff",
       "debugging",
       "dep_injection",

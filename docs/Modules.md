@@ -3,9 +3,8 @@ id: modules
 title: Modules
 ---
 
-## Modules
-### Installing and uninstalling modules.
+## Installing and uninstalling modules.
 ``` php
-\Drupal::service('module_installer')->install(['media']);
-\Drupal::service('module_installer')->uninstall(['media']);
+\Drupal::service('module_installer')->install(['module_name']);
+\Drupal::service('module_installer')->uninstall(['module_name']);
 ```
