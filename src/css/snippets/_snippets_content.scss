@@ -44,14 +44,6 @@
   padding: 0;
 }
 
-// snippet heading
-[class*="docTitle"] {
-  font-size: convert(30, px, ems);
-  line-height: 37px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
 // snippet heading caption
 .markdown > p:first-child {
   font-weight: 500;

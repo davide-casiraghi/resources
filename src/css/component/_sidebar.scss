@@ -1,7 +1,15 @@
 // sidebar left wrapper -- snippets
 [class*="docSidebarContainer"] {
   margin-top: -($navbar-height);
-  border-color: $grayLight;
+  width: 265px;
+  border: none;
+}
+
+// sidebar left  wrapper -- snippets DM
+[data-theme="dark"] [class*="docSidebarContainer"] {
+  > [class*="sidebar"] {
+    border-right: 1px solid $shark;
+  }
 }
 
 // sidebar left -- snippets
@@ -11,20 +19,13 @@
   height: calc(100vh - #{$navbar-height});
   overflow-x: hidden;
   top: 75px; // position sticky in default styles
+  border-right: 1px solid $grayLighter;
   @include medium {
     height: 0;
   }
 }
 
-// sidebar left -- snippets DM
-[data-theme="dark"] [class*="docSidebarContainer"] {
-  border-color: $shark;
-  > [class*="sidebar"] {
-    border-right: 1px solid $shark;
-  }
-}
-
-
+// sidebar left  wrapper -- snippets DM
 [class*="docSidebarContainer"] > [class*="sidebar"]:not(.menu--responsive) {
   @include large {
     position: fixed;

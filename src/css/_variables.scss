@@ -27,6 +27,9 @@ $grayLightest: #FAFAFA;
 $grayMedium: #585862;
 $grayDark : #65737E;
 $grayDarker : #444;
+$grayDarkest: #656565;
+$grayDarkest2: #717171;
+$grayDarkest3 : #BBBBBB;
 $metal : #8fa1b3;
 $metalLight : #c0c5ce;
 $red: #F57455;
@@ -34,6 +37,11 @@ $redDark: #BE1212;
 $shark: #31353F;
 $olive: #a3be8c;
 $lightPurple: #b48ead;
+
+:root {
+  --ifm-navbar-search-input-background-color: #ffffff00;
+}
+
 
 // Layout
 $navbar-height: 75px;

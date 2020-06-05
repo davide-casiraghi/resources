@@ -13,7 +13,7 @@
   }
 }
 
-// Navigation
+// Main nav
 .navbar {
   box-shadow:none;
   border-bottom:1px solid $grayLighter;
@@ -26,19 +26,16 @@
   }
 
   &__logo {
-    max-width: 35vw;
+    max-width: 40vw;
+    width: 162px;
   }
 
   &__title {
     display: none;
   }
-
-  a.navbar__link{
-    margin: 0 2em 0 0;
-  }
 }
 
-// Navigation DM
+// Main nav DM
 [data-theme="dark"] {
   .navbar {
     border-color:$shark;
@@ -54,8 +51,11 @@
       background-image: url("/img/logo-DM.svg");
       background-size: contain;
       background-repeat: no-repeat;
+      background-position: left center;
       width: 100%;
       height: 100%;
+      width: 162px;
+      max-width: 40vw;
     }
     .navbar__logo {
       display: none;
@@ -63,7 +63,7 @@
   }
 }
 
-// Navbar responsive
+// Main nav -- mobile
 @include medium {
   .navbar__items {
     width: 100%;
@@ -77,15 +77,14 @@
   }
 }
 
-// Navigation menu
+// Main nav __ link
 a.navbar__link {
   font-weight: 500;
   font-size: convert(16, px, ems);
   position:relative;
   padding:0;
-  margin:0 1em;
+  margin: 0 2em 0 0;
   transition: .3s;
-
 
   &::before {
     content:'';
@@ -109,13 +108,13 @@ a.navbar__link {
   }
 }
 
-// Navigation menu DM
+// Main nav __ link DM
 [data-theme="dark"] {
   a.navbar__link {
     color: $grayLighter;
 
     &:hover {
-      color:$grayLighter;
+      color: $grayLighter;
     }
 
     &::before {
@@ -124,7 +123,7 @@ a.navbar__link {
   }
 }
 
-/* Mobile menu */
+/* Mobile main menu */
 @include medium {
 
   // mobile menu top area
@@ -157,252 +156,5 @@ a.navbar__link {
   // mobile menu DM
   [data-theme="dark"] .navbar-sidebar {
     background-color: $midnight;
-  }
-}
-
-/* Side menu */
-.menu {
-  min-width: 265px;
-  width: 265px;
-  padding: 0 42.5px 42.5px 0;
-  overflow-x: hidden;
-}
-
-ul.menu__list.menu__list {
-  margin-left:0;
-
-  @include medium {
-    margin-bottom: 100px;
-  }
-}
-
-.menu__list-item {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.menu__link {
-  padding-left: 0;
-}
-
-.navbar-sidebar__items {
-  padding: 0;
-}
-
-// Side link arrow collapsed
-.menu__list-item--collapsed {
-  .menu__link--sublist {
-    &:after {
-      transform: rotateZ(0deg);
-    }
-  }
-}
-
-// Side link arrow active
-.menu__link--sublist {
-  &::after {
-    background-image:url("/img/right-arrow.svg");
-    background-size:1rem .8rem;
-    background-repeat: no-repeat;
-    transform: rotate(90deg);
-    content:'';
-  }
-}
-
-// Side link categories
-.menu__list-item {
-  a.menu__link.menu__link--sublist {
-    padding-right: 10px;
-    font-weight: 600;
-    font-size: convert(16, px, ems);
-    text-transform: uppercase;
-    transition: .3s;
-
-    &:hover {
-      background-color:transparent;
-      color:$space;
-    }
-  }
-}
-
-// Side link categories collapsed
-.menu__list-item--collapsed {
-  a.menu__link.menu__link--sublist {
-    color: $gray;
-  }
-}
-
-// Side link categories DM
-[data-theme="dark"] {
-  .menu__list-item {
-    a.menu__link.menu__link--sublist {
-      color: $grayLighter;
-
-      &:hover {
-        color:$white;
-      }
-    }
-  }
-  .menu__list-item--collapsed {
-    a.menu__link.menu__link--sublist {
-      color: $gray;
-    }
-  }
-}
-
-/* Side link categories mobile */
-.menu--responsive {
-  @include medium {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    left: -100%;
-    transition: left .2s;
-    z-index: 7000;
-    padding-top: calc(#{$navbar-height} + 30px) !important;
-    padding-left: 30px;
-    width: 80vw;
-    border: none;
-    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
-
-    // Side link categories header area
-    &:before {
-      content: "Categories list";
-      position: absolute;
-      width: 80vw;
-      line-height: $navbar-height;
-      top: 0;
-      left: 0;
-      transition: .2s;
-      border-bottom: 1px solid $grayLight;
-      padding-left: 30px;
-      font-weight: 600;
-    }
-
-    // Side link categories floating button
-    .menu__button {
-      font-family: Montserrat;
-      right: 30px;
-      overflow: hidden;
-      width: 170px;
-      height: 35px;
-      svg, span {
-        display: none;
-      }
-      transition: .2s;
-      background-color: $midnight;
-      color: $grayLighter;
-      border: none;
-    }
-
-    // Side link categories floating button --hover
-    .menu__button:hover {
-      border: none;
-      background-color: rgba($midnight, .9);
-    }
-
-    // Side link categories floating button text
-    .menu__button:before {
-      content: "Show categories";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    // Side link categories backdrop
-    .menu__button:after {
-      content: "";
-      position: fixed;
-      width: 20vw;
-      height: 100vh;
-      bottom: 0;
-      left: -100vw;
-      background: rgba($midnight, .6);
-      border-radius: 0;
-      border: 0;
-      opacity: 0;
-      transition-delay: .2s;
-      transition: opacity .3s
-    }
-  }
-}
-
-// Side link categories mobile --open
-.menu--responsive.menu--show {
-  @include medium {
-    left: 0;
-    transition: .2s;
-    .menu__button {
-      right: -100vw;
-    }
-
-    .menu__button:after {
-      left: 80vw;
-      opacity: 1;
-      transition-delay: .2s;
-    }
-  }
-}
-
-// Side link categories mobile DM
-[data-theme="dark"] .menu--responsive {
-  background-color: $midnight;
-  &:before {
-    border-color: $shark;
-  }
-
-  // Side link categories floating button DM
-  .menu__button {
-    background-color: $grayLight;
-    color: $midnight;
-  }
-
-  // Side link categories floating button --hover DM
-  .menu__button:hover {
-    background-color: $gray;
-  }
-}
-
-// Child items Side menu
-.menu__list-item {
-  a.menu__link {
-    color:$space;
-    font-size:convert(14, px, ems);
-
-    &.active {
-      font-weight:bold;
-      background-color:transparent;
-    }
-
-    &:hover {
-      background: none;
-      text-decoration: underline;
-    }
-  }
-}
-
-// root page active sidebar item
-.menu__link--active:not(.menu__link--sublist) {
-  background: none;
-  font-weight: 700;
-}
-
-// Child items Side menu DM
-[data-theme="dark"] {
-  .menu__list-item {
-    a.menu__link {
-      color:rgba(255,255,255, 0.5);
-
-      &.active,
-      &:hover {
-        color:rgba(255,255,255, 1);
-      }
-    }
-  }
-
-  .menu__link--active:not(.menu__link--sublist) {
-    color: $white;
   }
 }

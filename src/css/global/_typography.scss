@@ -17,11 +17,17 @@ html {
   color: $grayLighter
 }
 
+// snippet heading
+[class*="docTitle"] ,
 h1{
   font-weight: 600;
   font-size: convert(30, px , ems);
   line-height: 37px;
-  margin-bottom: 14px;
+  margin-bottom: 25px;
+}
+
+[class*="docTitle"] {
+  line-height: 1;
 }
 
 h2 {
@@ -35,14 +41,14 @@ h2 {
 // content title
 .markdown > h2 {
   margin-top: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-size: convert(25, px, ems);
 }
 
 
 h3 {
   font-weight: 600;
-  font-size: convert(20, px, ems);
+  font-size: convert(22, px, ems);
   line-height: 1.2;
   margin-top: 44px;
 }
