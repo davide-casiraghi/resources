@@ -20,8 +20,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'db_stuff/',
-          activeBasePath: 'docs',
+          to: 'docs/',
           label: 'Snippets',
           position: 'left',
         },
@@ -112,8 +111,6 @@ module.exports = {
       {
         editUrl: 'https://bitbucket.org/agiledrop/developer_resources/src/master',
         sidebarPath: require.resolve('./sidebars.js'),
-        routeBasePath: '/',
-        homePageId: 'db_stuff'
       }
     ],
     ['@docusaurus/plugin-content-pages', {}],
