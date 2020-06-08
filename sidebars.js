@@ -40,8 +40,6 @@ function getFiles(dir) {
   });
 }
 
-console.log(JSON.stringify(getFiles(docsPath), null, 2));
-
 module.exports = {
   docs: getFiles(docsPath),
 }
