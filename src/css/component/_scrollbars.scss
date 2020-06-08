@@ -1,6 +1,7 @@
 // snippets scrollbars
 [class*="docSidebarContainer"] > [class*="sidebar"],
-[class*="codeBlock"] {
+[class*="codeBlock"],
+.ds-suggestions {
 
   &::-webkit-scrollbar-track-piece:start {
     background-color: $white;
@@ -29,7 +30,8 @@
 // snippets DM
 [data-theme="dark"] {
   [class*="docSidebarContainer"] > [class*="sidebar"],
-  [class*="codeBlock"] {
+  [class*="codeBlock"],
+  .ds-suggestions {
 
     &::-webkit-scrollbar-track-piece:start {
       background-color: $midnight;
@@ -49,6 +51,13 @@
 
     &::-webkit-scrollbar-corner {
       background: $midnight
+    }
+  }
+
+  .ds-suggestions {
+      &::-webkit-scrollbar-corner ,
+      &::-webkit-scrollbar-track-piece:start {
+      background-color: $grayDarkest;
     }
   }
 }
