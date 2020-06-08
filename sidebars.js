@@ -34,7 +34,25 @@ function getFiles(dir) {
       return 1;
     } else if (a.type === 'doc' && b.type === 'category') {
       return -1;
-    } else {
+    } else if (a.type === 'doc' && b.type === 'doc') {
+      const aId = a.id.toLowerCase();
+      const bId = b.id.toLowerCase();
+      if (aId < bId) {
+        return -1;
+      }
+      if (aId > bId) {
+        return 1;
+      }
+      return 0;
+    } else if (a.type === 'category' && b.type === 'category') {
+      const aLabel = a.label.toLowerCase();
+      const bLabel = b.label.toLowerCase();
+      if (aLabel < bLabel) {
+        return -1;
+      }
+      if (aLabel > bLabel) {
+        return 1;
+      }
       return 0;
     }
   });
