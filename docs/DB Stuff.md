@@ -3,11 +3,9 @@ id: db_stuff
 title: DB Stuff
 ---
 
-Database related code snippets
-
 ## Simple database query.
 ``` php
-$results = \Drupal::database()->query('select * from purge_queue')->fetchAll();
+$results = \Drupal::database()->query('select * from users')->fetchAll();
 ```
 
 ## Debugging an entity query, enable the devel module and add tag before execute.
@@ -38,8 +36,8 @@ $query->execute();
 ## Update statement.
 
 ``` php
-$query = \Drupal::database()->update('mcpl_events_feeds_item');
-$query->fields(['hash' => 'update']);
+$query = \Drupal::database()->update('node');
+$query->fields(['langcode' => 'fr']);
 $query->condition('nid', 1);
 $query->execute();
 ```
@@ -47,7 +45,7 @@ $query->execute();
 ## Delete statement.
 
 ``` php
-$query = \Drupal::database()->delete('purge_queue');
-$query->condition('data', '%url%', 'LIKE');
+$query = \Drupal::database()->delete('cachetags');
+$query->condition('tag', '%block%', 'LIKE');
 $query->execute();
 ```
