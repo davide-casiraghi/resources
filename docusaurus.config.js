@@ -30,8 +30,8 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://bitbucket.org/agiledrop/developer_resources',
-          label: 'Bitbucket',
+          href: 'https://github.com/AGILEDROP/resources/',
+          label: 'Github',
           position: 'right',
         },
       ],
