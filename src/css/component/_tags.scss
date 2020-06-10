@@ -14,8 +14,24 @@
   color: $gray;
   margin-right: 0;
   border: 1px solid $gray;
+  border-color: $grayLighter;
+  transition: .2s;
+  font-weight: 600;
+  margin-right: 4px;
+  margin-bottom: 4px;
   &:hover {
     color: $space;
+    border-color: $space;
+    text-decoration: none;
+  }
+}
+
+// tag DM
+[data-theme="dark"] .badge {
+  border-color: $grayMedium;
+  &:hover {
+    color: $white;
+    border-color: rgba($grayLight, 0.5);
     text-decoration: none;
   }
 }

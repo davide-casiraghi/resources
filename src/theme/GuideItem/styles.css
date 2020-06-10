@@ -107,10 +107,6 @@
   color: inherit;
 }
 
-.guide-item:hover * {
-  color: inherit;
-}
-
 .guide-item:hover .action {
   opacity: 1;
   top: 0;

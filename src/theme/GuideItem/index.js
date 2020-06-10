@@ -63,7 +63,7 @@ function GuideItem(props) {
         <div className={`guide-item__inner domain-bg domain-bg--${domainBG} domain-bg--hover`}>
           <header>
             <div className="guide-item__category category">{categories[0].name}</div>
-            <h2 className="guide-item__title" title={title}>{seriesPosition && (seriesPosition + '. ')}{coverLabel || title}</h2>
+            <h3 className="guide-item__title" title={title}>{seriesPosition && (seriesPosition + '. ')}{coverLabel || title}</h3>
           </header>
           <footer>
             {sourceLogoPath && <SVG src={sourceLogoPath} className="logo" />}

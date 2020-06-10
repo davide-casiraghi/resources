@@ -2,6 +2,12 @@
 .guide-item {
   border: 1px solid $grayLighter;
 
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   // guide category
   .category {
     color: $gray
@@ -15,7 +21,8 @@
 
 // guide item __ header container
 .guide-item header {
-  padding: 30px;
+  padding: 30px 30px 0;
+  min-height: unset;
 }
 
 // guide item __ title tag
@@ -47,7 +54,8 @@
 
 // guide item __ footer container
 .guide-item footer {
-  padding: 30px;
+  padding: 0 30px 30px;
+  position: static;
 }
 
 // guide item __ read more
