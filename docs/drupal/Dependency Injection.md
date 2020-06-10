@@ -3,7 +3,7 @@ id: dep_injection
 title: Dependency Injection
 ---
 
-### services.yml:
+### services.yml
 ``` yaml
 services:
   du_user_management:
