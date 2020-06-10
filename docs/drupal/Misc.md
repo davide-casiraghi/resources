@@ -44,10 +44,3 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 new RedirectResponse(\Drupal::url($route_name));
 ```
 
-## Add t() to classes (services, controllers, etc)
-``` php
-use Drupal\Core\StringTranslation\StringTranslationTrait;
-class MyClass {
-  use StringTranslationTrait;
-}
-```

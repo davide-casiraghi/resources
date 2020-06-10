@@ -17,3 +17,8 @@ $account = \Drupal::currentUser();
 ``` php
 $account = \Drupal::currentUser()->id();
 ```
+## Get user roles
+``` php
+$user = \Drupal::entityTypeManager()->getStorage('user')->load(23);
+$role = $user->getRoles();
+```

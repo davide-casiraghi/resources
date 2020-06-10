@@ -2,9 +2,6 @@
 id: debugging
 title: Debugging
 ---
-
-Debugging code snippets
-
 ## Debug backtrace any error.
 ``` php
 // This function exists in core/includes/bootstrap.inc.

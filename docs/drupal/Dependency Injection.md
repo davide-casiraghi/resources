@@ -1,9 +1,7 @@
 ---
 id: dep_injection 
-title: Dependency Injection snippets
+title: Dependency Injection
 ---
-
-Dep inject
 
 ### services.yml:
 ``` yaml
@@ -77,6 +75,33 @@ services:
       $plugin_definition,
       $container->get('du_user_management'),
       $container->get('config.factory')
+    );
+  }
+```
+
+### FieldFormatter
+``` php
+  /**
+   * {@inheritDoc}
+   */
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings, EntityTypeManagerInterface $entity_type_manager) {
+    parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);
+    $this->entityTypeManager = $entity_type_manager;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $plugin_id,
+      $plugin_definition,
+      $configuration['field_definition'],
+      $configuration['settings'],
+      $configuration['label'],
+      $configuration['view_mode'],
+      $configuration['third_party_settings'],
+      $container->get('entity_type.manager')
     );
   }
 ```

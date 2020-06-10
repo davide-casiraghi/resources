@@ -1,6 +1,6 @@
 ---
 id: db_stuff
-title: DB Stuff
+title: Database
 ---
 
 ## Simple database query.

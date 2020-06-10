@@ -34,3 +34,8 @@ $new_field = BaseFieldDefinition::create('string')
 ``` php
 \Drupal::entityDefinitionUpdateManager()->applyUpdates();
 ```
+
+## Get bundle field definitions
+``` php
+\Drupal::service('entity_field.manager')->getFieldDefinitions($entity_type, $bundle_id);
+```
