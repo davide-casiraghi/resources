@@ -8,21 +8,6 @@ function enrichTag(tag, section) {
   const labelParts = tag.label.split(': ', 2);
   const category = labelParts[0];
   const value = labelParts[1];
-  let style = 'primary';
-
-  switch(category) {
-    case 'domain':
-      style = 'blue';
-      break;
-
-    case 'type':
-      style = 'pink'
-      break;
-
-    default:
-      style = 'primary';
-      break;
-  }
 
   return {
     category: category,
@@ -30,7 +15,6 @@ function enrichTag(tag, section) {
     enriched: true,
     label: tag.label,
     permalink: tag.permalink,
-    style: style,
     value: value,
   };
 }
