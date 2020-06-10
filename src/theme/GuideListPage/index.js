@@ -21,6 +21,7 @@ function Guides({filtering, items}) {
     return <GuideItems items={items} />
   } else {
     const gettingStartedGuides = items.filter(item => item.content.metadata.categories[0].name == 'getting-started');
+    const gettingStartedCategory = gettingStartedGuides[0].content.metadata.categories[0];
     const advancedGuides = items.filter(item => item.content.metadata.categories[0].name == 'advanced');
     const advancedCategory = advancedGuides[0].content.metadata.categories[0];
 
@@ -28,7 +29,11 @@ function Guides({filtering, items}) {
     return (
       <>
         <section className="guides-group">
-          <GuideItems items={gettingStartedGuides}  staggered={false}/>
+          <div className="guides-group__title-area">
+            <AnchoredH2 className="guides-group__title" id={gettingStartedCategory.permalink}>{gettingStartedCategory.title}</AnchoredH2>
+            {advancedCategory.description && <div className="guides-group__subtitle">{gettingStartedCategory.description}</div>}
+          </div>
+          <GuideItems items={gettingStartedGuides} large={false} />
         </section>
         <section className="guides-group">
           <div className="guides-group__title-area">
