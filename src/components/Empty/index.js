@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Link from '@docusaurus/Link';
-import Vic from '@site/src/components/Vic';
+import classnames from 'classnames';
+import styles from './styles.module.css';
 
 function Empty({text}) {
   return <section className="empty">
-    <Vic style="no" text={text} />
+    <div className={classnames(styles.text)}>{text}</div>
   </section>;
 }
 

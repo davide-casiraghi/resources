@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 
 import Alert from '@site/src/components/Alert';
 import Avatar from '@site/src/components/Avatar';
-import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
-import InstallationCommand from '@site/src/components/InstallationCommand';
-import Jump from '@site/src/components/Jump';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Modal from 'react-modal';
@@ -14,14 +11,12 @@ import {MDXProvider} from '@mdx-js/react';
 import PagePaginator from '@theme/PagePaginator';
 import SVG from 'react-inlinesvg';
 import Tags from '@site/src/components/Tags';
-import VectorComponents from '@site/src/components/VectorComponents';
 
 import _ from 'lodash';
 import classnames from 'classnames';
 import dateFormat from 'dateformat';
 import {enrichTags} from '@site/src/exports/tags';
 import styles from './styles.module.css';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
 Modal.setAppElement('#__docusaurus')
@@ -81,10 +76,6 @@ function GuidePage(props) {
   // Site config
   //
 
-  const {siteConfig} = useDocusaurusContext();
-  // const {metadata: {installation, sources, sinks}} = siteConfig.customFields;
-  // const {platforms} = installation;
-
   //
   // Variables
   //
@@ -103,27 +94,6 @@ function GuidePage(props) {
   const sourceName = sourceTag ? sourceTag.value : null;
   const source = sourceName && sources[sourceName];
 
-  let sinkPathTemplate = null;
-
-  if (platform) {
-    sinkPathTemplate = `/guides/integrate/platforms/${platform.name}/<name>/`;
-  } else if (source) {
-    sinkPathTemplate = `/guides/integrate/sources/${source.name}/<name>/`;
-  } else if (sink) {
-    sinkPathTemplate = `/guides/integrate/sinks/<name>/`;
-  }
-
-  let sourcePathTemplate = sink ?
-    `/guides/integrate/sources/<name>/${sink.name}/` :
-    '/guides/integrate/sources/<name>/';
-
-  //
-  // State
-  //
-
-  const [showSourceSwitcher, setShowSourceSwitcher] = useState(false);
-  const [showSinkSwitcher, setShowSinkSwitcher] = useState(false);
-
   //
   // Render
   //
@@ -132,44 +102,6 @@ function GuidePage(props) {
 
   return (
     <Layout title={title} description={`${title}, in minutes, for free`}>
-      {showSourceSwitcher && <Modal
-        className="modal"
-        onRequestClose={() => setShowSourceSwitcher(false)}
-        overlayClassName="modal-overlay"
-        isOpen={showSourceSwitcher !== null}
-        contentLabel="Minimal Modal Example">
-          <header>
-            <h1>Where do you receive your data from?</h1>
-          </header>
-          <VectorComponents
-            exceptFunctions={['test']}
-            exceptNames={[source && source.name, 'docker', 'vector']}
-            eventTypes={sink && sink.event_types}
-            pathTemplate={sourcePathTemplate}
-            titles={false}
-            sources={true}
-            transforms={false}
-            sinks={false} />
-      </Modal>}
-      {showSinkSwitcher && <Modal
-        className="modal"
-        onRequestClose={() => setShowSinkSwitcher(false)}
-        overlayClassName="modal-overlay"
-        isOpen={showSinkSwitcher !== null}
-        contentLabel="Minimal Modal Example">
-          <header>
-            <h1>Where do you want to send your data?</h1>
-          </header>
-          <VectorComponents
-            exceptFunctions={['test']}
-            exceptNames={[sink && sink.name, 'vector']}
-            eventTypes={source && source.event_types}
-            pathTemplate={sinkPathTemplate}
-            titles={false}
-            sources={false}
-            transforms={false}
-            sinks={true} />
-      </Modal>}
       <main className={classnames('container', styles.container)}>
         <aside className={styles.sidebar}>
           <section className={styles.avatar}>
