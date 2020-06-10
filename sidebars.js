@@ -5,7 +5,7 @@ const DocUtils = require("@docusaurus/utils");
 const docsPath = resolve(__dirname, "docs");
 
 function getFiles(dir) {
-  const dirents = readdirSync(dir, { withFileTypes: true });
+  const dirents = readdirSync(dir, { withFileTypes: true }).filter((dirent => dirent.name !== 'Contribute.md'));
 
   const files = dirents.map((dirent) => {
     const res = resolve(dir, dirent.name);

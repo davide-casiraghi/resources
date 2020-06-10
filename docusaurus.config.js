@@ -23,6 +23,7 @@ module.exports = {
           to: 'docs/',
           label: 'Snippets',
           position: 'left',
+          activeBaseRegex: 'docs/(?!contribute)'
         },
         {
           to: 'guides/',
@@ -30,9 +31,10 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'contribute/',
+          to: 'docs/contribute',
           label: "Contribute",
           position: 'right',
+          activeBaseRegex: 'docs/contribute'
         },
         {
           href: 'https://github.com/AGILEDROP/resources/',
