@@ -1,20 +1,20 @@
 ---
 id: db_stuff
-title: DB Stuff
+title: Database
 ---
 
-## Simple database query.
+## Simple database query
 ``` php
 $results = \Drupal::database()->query('select * from users')->fetchAll();
 ```
 
-## Debugging an entity query, enable the devel module and add tag before execute.
+## Debugging an entity query, enable the devel module and add tag before execute
 
 ``` php
 $entity_query->addTag('debug')->execute();
 ```
 
-## Delete all 'event' nodes.
+## Delete all 'event' nodes
 
 ``` php
 $result = \Drupal::entityQuery('node')
@@ -24,7 +24,7 @@ entity_delete_multiple('node', $result);
 // Add ->range(0, 10) to delete a range
 ```
 
-## Insert statement.
+## Insert statement
 
 ``` php
 $query = \Drupal::database()->insert('purge_queue');
@@ -33,7 +33,7 @@ $query->values(['a:4:{i:0;s:3:"url";i:1;a:4:{s:10:"66849f6f11";i:3;s:10:"c990b12
 $query->execute();
 ```
 
-## Update statement.
+## Update statement
 
 ``` php
 $query = \Drupal::database()->update('node');
@@ -42,7 +42,7 @@ $query->condition('nid', 1);
 $query->execute();
 ```
 
-## Delete statement.
+## Delete statement
 
 ``` php
 $query = \Drupal::database()->delete('cachetags');

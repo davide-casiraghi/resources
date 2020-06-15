@@ -4,12 +4,12 @@ title: Libraries
 ---
 
 ## Adding Libraries
-### In preprocess function or controller function.
+### In preprocess function or controller function
 ``` php
 $variables['#attached']['library'][] = 'lotus/lotus-js';
 ```
 
-### In twig template file.
+### In twig template file
 ``` php
 {{ attach_library('hcpl_zen/title-record') }}
 ```

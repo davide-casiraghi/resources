@@ -3,7 +3,7 @@ id: rendering
 title: Rendering
 ---
 
-## Render an entity.
+## Render an entity
 ``` php
 $nid = 1;
 $entity_type = 'node';
@@ -15,7 +15,7 @@ $build = $view_builder->view($node, $view_mode);
 $output = render($build);
 ```
 
-## Render a field.
+## Render a field
 ``` php
 $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
 $storage = \Drupal::entityTypeManager()->getStorage('node');

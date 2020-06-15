@@ -3,7 +3,7 @@ id: search
 title: Search
 ---
 
-## Trigger select entities to be re-indexed through the Search API.
+## Trigger select entities to be re-indexed through the Search API
 ``` php
 // This is for Title Record entities, but any entity will do.
 use Drupal\search_api\Plugin\search_api\datasource\ContentEntity;
