@@ -1,7 +1,7 @@
 /* Snippets sidebar left menu */
 .menu {
-  min-width: 265px;
-  width: 265px;
+  min-width: $sidebar-right-width;
+  width: $sidebar-right-width;
   padding: 50px 50px 50px 0;
   overflow-x: hidden;
 

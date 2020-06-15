@@ -1,7 +1,7 @@
 // sidebar left wrapper -- snippets
 [class*="docSidebarContainer"] {
   margin-top: -($navbar-height);
-  width: 265px;
+  width: $sidebar-right-width;
   border: none;
 }
 
@@ -35,8 +35,8 @@
 
 // sidebar left -- guide
 main > [class*="sidebar"]:first-child {
-  width: 265px;
-  min-width: 265px;
+  width: $sidebar-right-width;
+  min-width: $sidebar-right-width;
   border-right: 1px solid $grayLighter;
   overflow-y: auto;
   height: calc(100vh - #{$navbar-height});
@@ -78,6 +78,7 @@ main > [class*="sidebar"]:last-child {
     border-left: 1px solid $grayLighter;
     padding-left: 50px;
     padding-right: 0;
+    max-width: $sidebar-right-width;
 
     @include large {
       padding-left: 30px;

@@ -21,22 +21,32 @@
 }
 
 // main content
-[class*="docMainContainer"] {
-  max-width: calc( 100% - 265px );
+[class*="docSidebarContainer"] + [class*="docMainContainer"] {
+  max-width: calc( 100% - #{$sidebar-right-width} );
+
+  [class*="docItemCol"] {
+    padding-left: 50px !important;
+  }
 
   @include medium {
     max-width: unset;
+
+    [class*="docItemCol"] {
+      padding-left: 0px !important;
+    }
   }
 }
 
 [class*="docItemCol"] {
   padding-top: 42.5px !important;
-  padding-left: 50px !important;
+  padding-left: 0px !important;
   padding-right: 50px !important;
+  max-width: calc( 100% - #{$sidebar-right-width} ) !important;
 
   @include medium {
     padding-left: 0px !important;
     padding-right: 0px !important;
+    max-width: unset !important;
   }
 }
 
