@@ -103,6 +103,18 @@ tags: ["language: php", "framework: drupal"]
 ---
 ```
 
+### Tags
+
+Each guide can have multiple tags added to it. Tags can be custom but we have an agreement that we use following two tags:
+- `language`: this is a programming language that the guide refers to (e.g. `php`, `javascript`)
+- `framework`: this is a framework that the guide refers to (e.g. Drupal, `symfony`, `angular`)
+
+Tag key and value should be written in lower case. 
+
+If the guide describes working with multiple languages or frameworks, specify them separately (`tags: ["language: php", "language: javascript", "framework: drupal"]`), but try to limit to two of each. 
+
+You can also leave the tags empty if you can't tag the guide properly.
+
 ### Author data in metadata.json
 
 **Make sure that author object with same `github` link as provided in `author_github` exists in list inside `./metadata.json` file under `team` field.**
