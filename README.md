@@ -1,6 +1,7 @@
-# Website
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 Following instructions are aplicable if you want to test and run the website on your local machine.
+
+## Website
 
 ### Installation
 
@@ -17,12 +18,30 @@ $ npm run start
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
-# Guidelines
+### Build
+
+```
+$ npm run build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Content structure
+
+In general we have two main types of pages - snippets and guides. 
+
+Snippets are short parts of code that are often used while developing. They should have a title and a code. You can add a small comment but mostly they should be self-explanatory.
+
+Guides are extended pieces of content and consist of text and code blocks. However, try to keep them as short as possible and only cover one topic inside of a single guide.   
 
 ## Snippets
 
-### Adding to existing document / page
-You can simply add snippets to existing documents by editing coresponding markdown file inside `./docs/CATEGORY` folder. Add a title describing the snippet and enclose your code with markdown tags.
+Snippets are located inside of `./docs` folder. They must be part of a category which is determined by the folder structure: `./docs/CATEGORY/file_name.md`.
+
+Sidebar menu, including any new categories, will be automatically generated based on the `./docs` folder structure.
+
+### Adding to existing page
+You can simply add or update snippets to existing documents by editing corresponding markdown file inside `./docs/CATEGORY` folder. Add a title describing the snippet and enclose your code with markdown tags.
 ``` 
 ## Title
 ### First sub-title
@@ -32,16 +51,14 @@ You can simply add snippets to existing documents by editing coresponding markdo
 Any additional comments (optional)
 ``` 
 
-### Adding a new document / page
+### Adding a new page
 
 **Make sure your new markdown document has a correct header included.**
 
 Snippets header consists of:
 
 - `id`:  used for referencing document inside Docusaurus and creating document slugs for URL. Use snake case when naming.
-
 - `title`: this will be the main title shown on new documents page.
-
 
 Example:
 ```
@@ -52,18 +69,15 @@ title: Cool New Snippets
 ```
 If any field is missing it will be auto-generated from filename.
 
-
 Copy file inside `./docs` folder into related category folder (e.g. `./docs/drupal/cool_new_file.md`).
 
- If category doesn't yet exist, create a new folder (use lowercase naming) or leave file in top level `./docs` folder if you want it to be outside any category.
-
-Sidebar, including any new categories, will be automatically generated based on the `./docs` folder structure.
+If category doesn't exist yet, create a new folder (use lowercase naming) or leave file in top level `./docs` folder if you want it to be outside any category.
 
 ## Guides
 
 ### Editing existing guide
 
-Edit markdown file inside `./guides/CATEGORY` folder
+Edit markdown file inside `./guides/CATEGORY` folder.
 
 ### Creating new guide
 
@@ -89,7 +103,9 @@ tags: ["language: php", "framework: drupal"]
 ---
 ```
 
-**Make sure that author object with same `github` link as provided `author_github` exists in list inside `./metadata.json` file under `team` field.**
+### Author data in metadata.json
+
+**Make sure that author object with same `github` link as provided in `author_github` exists in list inside `./metadata.json` file under `team` field.**
 
 If not, add a new author object to the list:
 
@@ -116,10 +132,10 @@ Example:
 }
 ```
 
-# Publishing
+## Publishing
 
 Push your local branch with new/edited documents on Github repository.
 
-Open a Pull Request to `master` branch and assign it repo mantainer (boshtian?)
+Open a Pull Request to `master` branch and assign it to repo mantainers.
 
 Once your PR is checked and merged, new website will be deployed by site administrator.
