@@ -2,8 +2,8 @@ const path = require("path");
 
 module.exports = {
   title: 'Agiledrop Developer Resources',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Code snippets and guides for web developers',
+  url: 'https://resources.agiledrop.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'agiledrop', // Usually your GitHub org/user name.
