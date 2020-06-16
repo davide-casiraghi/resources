@@ -5,29 +5,23 @@ const DocUtils = require("@docusaurus/utils");
 const metadata = require("../metadata.json");
 
 const guidesPath = resolve(__dirname, "../guides");
-
 const authors = metadata.team.map((author) => author.id.toLowerCase());
 
-const new_authors = [];
+const API_KEY = "ad224e87c5e34ebdae06456d9194c85adbc9562c";
+const API_ENDPOINT = "https://api.github.com/graphql";
 
-function checkGuidesForAuthors(dir) {
-console.log('CHECKING: ', dir);
+function checkGuidesForAuthors(dir, new_authors) {
   const dirents = readdirSync(dir, { withFileTypes: true });
 
   for (dirent of dirents) {
     const res = resolve(dir, dirent.name);
 
     if (dirent.isDirectory()) {
-        console.log('isDir');
-      return checkGuidesForAuthors(res);
+      checkGuidesForAuthors(res, new_authors);
     } else {
-      console.log('is NOT Dir');
       const fileString = readFileSync(res, "utf-8");
       const { frontMatter } = DocUtils.parse(fileString);
       const username = basename(frontMatter.author_github);
-
-      console.log(username);
-
       if (
         !authors.includes(username.toLowerCase()) &&
         !new_authors.includes(username.toLowerCase())
@@ -36,23 +30,20 @@ console.log('CHECKING: ', dir);
       }
     }
   }
-  console.log('DONE TRAVERSING');
   return new_authors;
 }
 
-async function githubApi() {
-  const endpoint = "https://api.github.com/graphql";
-
-  const graphQLClient = new GQL.GraphQLClient(endpoint, {
+async function githubApi(usernames) {
+  const graphQLClient = new GQL.GraphQLClient(API_ENDPOINT, {
     headers: {
-      authorization: "bearer a6c72e4dfa90cfc877ed737656ca3b4779211f83",
+      authorization: `bearer ${API_KEY}`,
     },
   });
 
   let query = "";
 
-  for (let index = 0; index < new_authors.length; index++) {
-    let string = `user_${index}: user(login:"${new_authors[index]}") {
+  for (let index = 0; index < usernames.length; index++) {
+    let string = `user_${index}: user(login:"${usernames[index]}") {
         name,
         avatarUrl,
         bio,
@@ -62,27 +53,45 @@ async function githubApi() {
 
     query = query.concat(string);
   }
-  query = "{" + query + "}";
+  query = `{ ${query}  }`;
 
   return await graphQLClient.request(query);
 }
 
 async function main() {
-  let test = checkGuidesForAuthors(guidesPath);
+  let authors = checkGuidesForAuthors(guidesPath, []);
 
-  console.log(test);
-  // let response = await githubApi();
-  // let authors_formatted = Object.values(response).map(user => ({
-  // avatar: user.avatarUrl,
-  // bio: user.bio,
-  // github: user.url,
-  // id: user.login,
-  // name: user.name
-  // }));
+  if (!authors.length) {
+    return;
+  }
 
-  // metadata.team = metadata.team.concat(authors_formatted);
+  let response;
+  try {
+    response = await githubApi(authors);
+  } catch (error) {
+    if (error.response && error.response.errors.length) {
+      throw error.response.errors;
+    }
+    throw error;
+  }
 
-  // writeFileSync(resolve(__dirname, '../metadata.json'), JSON.stringify(metadata, undefined, 2));
+  let authors_formatted = Object.values(response).map((user) => ({
+    avatar: user.avatarUrl,
+    bio: user.bio,
+    github: user.url,
+    id: user.login,
+    name: user.name,
+  }));
+
+  metadata.team = metadata.team.concat(authors_formatted);
+
+  writeFileSync(
+    resolve(__dirname, "../metadata.json"),
+    JSON.stringify(metadata, undefined, 2)
+  );
 }
 
-main();
+main().catch((error) => {
+  console.error('### ERROR ###\n', error, '\n### END ERROR ###');
+  process.exit(1);
+});
