@@ -1,26 +1,18 @@
 import React from 'react';
 
 import classnames from 'classnames';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
 import './styles.css';
 
-function Avatar({bio, className, github, nameSuffix, rel, size, subTitle, vertical}) {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
-  const {metadata: {team}} = siteConfig.customFields;
-  const member = team.find(member => member.github.toLowerCase() == github.toLowerCase());
-
+function Avatar({bio, className, github, fullName, nameSuffix, rel, size, subTitle, vertical}) {
+  const displayName = fullName ? fullName : new URL(github).pathname.substring(1);
   return (
     <div className={classnames('avatar', className, {[`avatar--${size}`]: size, 'avatar--vertical': vertical})}>
       <img
         className={classnames('avatar__photo', `avatar__photo--${size}`)}
-        src={member.avatar}
+        src={github + '.png'}
       />
       <div className="avatar__intro">
-        <div className="avatar__name"><a href={member.github} target="_blank" rel={rel}>{member.name ? member.name : member.id}</a>{nameSuffix}</div>
-        {subTitle && <small className="avatar__subtitle">{subTitle}</small>}
-        {!subTitle && bio && <small className="avatar__subtitle" dangerouslySetInnerHTML={{__html: member.bio}} />}
+        <div className="avatar__name"><a href={github} target="_blank" rel={rel}>{displayName}</a>{nameSuffix}</div>
       </div>
     </div>
   );

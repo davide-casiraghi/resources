@@ -68,7 +68,7 @@ function GuidePage(props) {
 
   const {content: GuideContents} = props;
   const {frontMatter, metadata} = GuideContents;
-  const {author_github: authorGithub, id, last_modified_on: lastModifiedOn, series_position: seriesPosition, title} = frontMatter;
+  const {author_github: authorGithub, author_name: authorName, id, last_modified_on: lastModifiedOn, series_position: seriesPosition, title} = frontMatter;
   const {categories, readingTime, tags} = metadata;
   const {assumptions} = frontMatter;
 
@@ -108,6 +108,7 @@ function GuidePage(props) {
             <Avatar
               bio={false}
               github={authorGithub}
+              fullName={authorName}
               size="lg"
               rel="author"
               subTitle={false}

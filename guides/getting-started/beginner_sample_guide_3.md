@@ -4,6 +4,7 @@ title: Beginner Sample Guide 3
 description: Description of Beginner Sample Guide \#3
 series_position: null
 author_github: https://github.com/Xetro
+author_name: Matevz Golob
 
 tags: ["type: howto", "domain: operations"]
 ---

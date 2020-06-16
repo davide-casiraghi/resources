@@ -3,7 +3,8 @@ last_modified_on: "2020-05-01"
 title: Advanced Guide Sample 2
 description: Description of Advanced Guide \#2
 series_position: null
-author_github: https://github.com/Xetro
+author_github: https://github.com/Boshtian
+author_name: Bostjan Kovac
 tags: ["type: tutorial", "domain: deployment"]
 ---
 

@@ -89,6 +89,7 @@ Guides header consists of:
 - `description`: short description shown under the main title on guide page
 - `series_position`: Include if guide is a part of series (OPTIONAL)
 - `author_github`: Link to authors Github profile
+- `author_name`: Displayed name of author
 - `tags`: List of tags, left side of key-value pair denotes tag's type and right side is the category inside that type
 
 Example:
@@ -99,6 +100,7 @@ title: Beginner Sample Guide \#3
 description: Description of Beginner Sample Guide \#3
 series_position: null
 author_github: https://github.com/MyGithubProfile
+author_name: Agiledrop Developer
 tags: ["language: php", "framework: drupal"]
 ---
 ```
@@ -114,13 +116,6 @@ Tag key and value should be written in lower case.
 If the guide describes working with multiple languages or frameworks, specify them separately (`tags: ["language: php", "language: javascript", "framework: drupal"]`), but try to limit to two of each. 
 
 You can also leave the tags empty if you can't tag the guide properly.
-
-### Author data in metadata.json
-
-**Make sure that header in guide markdown file includes a valid github profile link under `github_author` field.**
-
-Executing `node scripts/github_users.js` will automatically get all users info from github API and add it to `metadata.json`.
-This script is already included in `npm start` and `npm run build` commands, so only use `github_users.js` for debugging purposes.
 
 ### Categories
 
