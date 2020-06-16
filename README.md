@@ -117,32 +117,17 @@ You can also leave the tags empty if you can't tag the guide properly.
 
 ### Author data in metadata.json
 
-**Make sure that author object with same `github` link as provided in `author_github` exists in list inside `./metadata.json` file under `team` field.**
+**Make sure that header in guide markdown file includes a valid github profile link under `github_author` field.**
 
-If not, add a new author object to the list:
+Executing `node scripts/github_users.js` will automatically get all users info from github API and add it to `metadata.json`.
+This script is already included in `npm start` and `npm run build` commands, so only use `github_users.js` for debugging purposes.
 
-- `avatar`: Link to authors github profile picture. Adding `.png` at end of your profile link works.
-- `bio`: Short bio of author (OPTIONAL - currently disabled on frontend)
-- `github`: Link to authors github profile
-- `id`: Short ID string for author, used internally
-- `name`: Displayed name of author
+### Categories
 
-Example:
-```
-{
-    "team": [
-        { ... },
-        { ... },
-        {
-            "avatar": "https://github.com/NewGuy.png",
-            "bio": "Example bio with <a href=\"https://google.com\">Links</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt facilisis eros, et egestas risus pellentesque et",
-            "github": "https://github.com/NewGuy",
-            "id": "new_guy",
-            "name": "New Guy"
-        },
-    ]
-}
-```
+If you need to add a new category for guides, create a new folder inside `./guides`, use kebab-case for naming. Displayed category title will be generated from folder name and made human readable (e.g foo-bar => Foo Bar).
+
+Edit `metadata.json`, add a new entry to `guides->categories` list. Under `description` add a short description for category and for `name` use folder name.
+
 
 ## Publishing
 
