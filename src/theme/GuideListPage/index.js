@@ -1,70 +1,87 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-import Empty from '@site/src/components/Empty';
-import GuideItems from '@theme/GuideItems';
-import Heading from '@theme/Heading';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
+import Empty from "@site/src/components/Empty";
+import GuideItems from "@theme/GuideItems";
+import Heading from "@theme/Heading";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 
-import qs from 'qs';
+import qs from "qs";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+const AnchoredH2 = Heading("h2");
 
-import './styles.css';
+function Guides({ filtering, items }) {
+  const context = useDocusaurusContext();
+  const { siteConfig = {} } = context;
+  const { categories } = siteConfig.customFields.metadata.guides;
 
-const AnchoredH2 = Heading('h2');
-
-function Guides({filtering, items}) {
   if (items.length == 0) {
-    return (
-      <Empty text="no guides found" />
-    );
+    return <Empty text="no guides found" />;
   } else if (filtering) {
-    return <GuideItems items={items} />
+    return <GuideItems items={items} />;
   } else {
-    const gettingStartedGuides = items.filter(item => item.content.metadata.categories[0].name == 'getting-started');
-    const gettingStartedCategory = gettingStartedGuides[0].content.metadata.categories[0];
-    const advancedGuides = items.filter(item => item.content.metadata.categories[0].name == 'advanced');
-    const advancedCategory = advancedGuides[0].content.metadata.categories[0];
-
-
     return (
       <>
-        <section className="guides-group">
-          <div className="guides-group__title-area">
-            <AnchoredH2 className="guides-group__title" id={gettingStartedCategory.permalink}>{gettingStartedCategory.title}</AnchoredH2>
-            {advancedCategory.description && <div className="guides-group__subtitle">{gettingStartedCategory.description}</div>}
-          </div>
-          <GuideItems items={gettingStartedGuides} large={false} />
-        </section>
-        <section className="guides-group">
-          <div className="guides-group__title-area">
-            <AnchoredH2 className="guides-group__title" id={advancedCategory.permalink}>{advancedCategory.title}</AnchoredH2>
-            {advancedCategory.description && <div className="guides-group__subtitle">{advancedCategory.description}</div>}
-          </div>
-          <GuideItems items={advancedGuides} large={false} />
-        </section>
+        {categories.map((category, index) => {
+          let guides = items.filter((item) => {
+            let categories = item.content.metadata.categories;
+            if (!categories.length) {
+              return false;
+            }
+            return categories[0].name === category.name;
+          });
+
+          if (!guides.length) {
+            return;
+          }
+
+          for (let guide of guides) {
+            let category_info = guide.content.metadata.categories[0];
+            return (
+              <section className="guides-group" key={category.name}>
+                <div className="guides-group__title-area">
+                  <AnchoredH2
+                    className="guides-group__title"
+                    id={category_info.permalink}
+                  >
+                    {category_info.title}
+                  </AnchoredH2>
+                  {category.description && (
+                    <div className="guides-group__subtitle">
+                      {category.description}
+                    </div>
+                  )}
+                </div>
+                <GuideItems items={guides} large={false} />
+              </section>
+            );
+          }
+        })}
       </>
     );
   }
 }
 
 function GuideListPage(props) {
-  const {metadata, items} = props;
-  const queryObj = props.location ? qs.parse(props.location.search, {ignoreQueryPrefix: true}) : {};
-  const [searchTerm, setSearchTerm] = useState(queryObj['search']);
+  const { metadata, items } = props;
+  const queryObj = props.location
+    ? qs.parse(props.location.search, { ignoreQueryPrefix: true })
+    : {};
+  const [searchTerm, setSearchTerm] = useState(queryObj["search"]);
 
   let filtering = false;
-  let filteredItems = items.filter(item => {
+  let filteredItems = items.filter((item) => {
     let tags = item.content.metadata.tags;
-    let hasPlatform = tags.some(tag => tag.label.startsWith('platform: '));
-    let hasSource = tags.some(tag => tag.label.startsWith('source: '));
-    let hasSink = tags.some(tag => tag.label.startsWith('sink: '));
+    let hasPlatform = tags.some((tag) => tag.label.startsWith("platform: "));
+    let hasSource = tags.some((tag) => tag.label.startsWith("source: "));
+    let hasSink = tags.some((tag) => tag.label.startsWith("sink: "));
     return !((hasPlatform || hasSource) && hasSink);
   });
 
   if (searchTerm) {
     filtering = true;
 
-    filteredItems = filteredItems.filter(item => {
+    filteredItems = filteredItems.filter((item) => {
       let normalizedTerm = searchTerm.toLowerCase();
       let frontMatter = item.content.frontMatter;
       let metadata = item.content.metadata;
@@ -72,7 +89,11 @@ function GuideListPage(props) {
 
       if (normalizedLabel.includes(normalizedTerm)) {
         return true;
-      } else if (metadata.tags.some(tag => tag.label.toLowerCase().includes(normalizedTerm))) {
+      } else if (
+        metadata.tags.some((tag) =>
+          tag.label.toLowerCase().includes(normalizedTerm)
+        )
+      ) {
         return true;
       } else {
         return false;
@@ -86,21 +107,22 @@ function GuideListPage(props) {
         <div className="container">
           <h1>Agiledrop Guides</h1>
           <div className="hero__subtitle">
-            Thoughtful guides to help you with development process. Created and curated by the <Link to="https://www.agiledrop.com/team">Agiledrop team</Link>.
+            Thoughtful guides to help you with development process. Created and
+            curated by the{" "}
+            <Link to="https://www.agiledrop.com/team">Agiledrop team</Link>.
           </div>
           <div className="hero__search">
             <input
               type="text"
               className="input--text input--xl"
               onChange={(event) => setSearchTerm(event.currentTarget.value)}
-              placeholder="Search by guide name or a tag" />
+              placeholder="Search by guide name or a tag"
+            />
           </div>
         </div>
       </header>
       <main className="container container--s">
-        <Guides
-          filtering={filtering}
-          items={filteredItems} />
+        <Guides filtering={filtering} items={filteredItems} />
       </main>
     </Layout>
   );

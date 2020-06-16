@@ -20,13 +20,11 @@ export async function generateGuides(
   options: PluginOptions,
 ) {
   const {include, routeBasePath, truncateMarker} = options;
-
   if (!fs.existsSync(guideDir)) {
     return [];
   }
 
-
-  const {baseUrl = ''} = siteConfig;
+  const {baseUrl = '', customFields } = siteConfig;
   const guideFiles = await globby(include, {
     cwd: guideDir,
   });
@@ -53,17 +51,8 @@ export async function generateGuides(
         let name = categoryParts[categoryParts.length - 1];
         let title = titleize(humanizeString(name));
 
-        let description = null;
-
-        switch(name) {
-          case 'advanced':
-            description = 'Go beyond the basics and unleash full potential with these advanced guides.';
-            break;
-
-          case 'getting-started':
-            description = 'Beginner guides to get your development started.';
-            break;
-        }
+        let category_meta = customFields!.metadata.guides.categories.find((category: any) => category.name === name);
+        let description = category_meta && category_meta.description ? category_meta.description : null;
 
         categories.unshift({
           name: name,
@@ -104,15 +93,7 @@ export async function generateGuides(
   );
 
   return _.sortBy(guides, [
-    ((guide) => {
-      let categories = guide.metadata.categories;
-
-      if (categories[0].name == 'getting-started') {
-        return ['AA'].concat(categories.map(category => category.name).slice(1));
-      } else {
-        return categories;
-      }
-    }),
+    ((guide) => guide.metadata.categories),
     'metadata.seriesPosition',
     ((guide) => guide.metadata.coverLabel.toLowerCase())
   ]);
