@@ -6,10 +6,10 @@ series_position: null
 author_github: https://github.com/kbrodej
 author_name: Klemen Brodej
 
-tags: ["type: howto", "domain: hooks"]
+tags: ["language: php", "framework: drupal"]
 ---
 
-Executes an update which is intended to update data, like entities.
+Hook_post_update executes an update which is intended to update data, like entities.
 
 > *These updates are executed after all hook_update_N() implementations. At this stage Drupal is already fully repaired so you can use any API as you wish.*
 
@@ -51,11 +51,12 @@ $query = $entity_type_manager->getStorage('node')->getQuery();
 
 ### Gathering data
 Next we need to set the limit for 1 batch and gather nodes for our batch. In this case we can use query range.
+
 > *In this example we are using simple service which takes the string and returns it in title case.*
+
 ```php
   $nodes_per_batch = 25;
   $set_title_service = \Drupal::service('set_title');
-
   $nids = $query->condition('type', 'event')
     ->range($sandbox['current'], $sandbox['current'] + $nodes_per_batch)
     ->execute();
@@ -73,25 +74,30 @@ It is important to increment ```$sandbox['current']``` as this will be the start
   }
 ```
 ### Finishing the operation
-To end our batch operation when all nodes are processed we need to set ```$sandbox['#finished'] = 1```
-> *you can set $sandbox['#finished'] to a value between 0 and 1 to indicate the percent completed.*
+Batch operation will be finished when ```$sandbox['#finished'] = 1```.
+
+Best way is to set $sandbox['#finished'] to a value between 0 and 1 to indicate the percent completed.
+
 ```php
   $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
 ```
+
 ### Alternatives
 As an alternative of using query range to gather data it can be gathered in the "setup".
 
 > Note: It is important to gather data, for example reading from file **inside IF statement** as this part of the code is run only once and **not** once per batch.
+
 ```php
 if (!isset($sandbox['total'])) {
   $sandbox['progress'] = 0;
   // Your code for gathering data goes here.
   $sandbox['lines'] = my_data_function();
-
   $sandbox['total'] = count($sandbox['lines']);
 }
 ```
+
 and then process it in batches
+
 ```php
   $items_per_batch = 25;
   $counter = 0;
@@ -108,7 +114,7 @@ and then process it in batches
 ```
 
 
-##### Whole code
+## Whole code
 ```php
 /**
  * Implements hook_post_update_NAME().
