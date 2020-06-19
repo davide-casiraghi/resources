@@ -5,25 +5,19 @@ title: Widgets
 
 ## Register widget
 ``` php
-add_action( 'widgets_init', 'register_widget' );
-function register_widget() {
-    register_widget( 'wp_widget_subclass' );
-}
+register_widget( 'wp_widget_subclass' );
 ```
 
 ## Register widget area
 ``` php
-function agiledrop_widgets_init() {
-	register_sidebar( array(
-		'name'          => 'Agiledrop right sidebar',
-		'id'            => 'agiledrop-right-sidebar',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'agiledrop_widgets_init' );
+register_sidebar( array(
+	'name'          => 'Agiledrop right sidebar',
+	'id'            => 'agiledrop-right-sidebar',
+	'before_widget' => '<div>',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h2>',
+	'after_title'   => '</h2>',
+) );
 ```
 
 ## Check if sidebar is in use
