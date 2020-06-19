@@ -1,15 +1,15 @@
 ---
 last_modified_on: "2020-05-01"
-title: Beginner Sample Guide 3
-description: Description of Beginner Sample Guide \#3
+title: Beginner Sample Guide 2
+description: Description of Beginner Sample Guide \#2
 series_position: null
 author_github: https://github.com/Xetro
 author_name: Matevz Golob
 
-tags: ["type: howto", "domain: operations"]
+tags: ["language: javascript", "framework: angular"]
 ---
 
-# Beginner Guide Sample 3 Header
+# Beginner Guide Sample 2 Header
 
 ## Iaculantem melioris parvumque augendo hoc levat caelestia
 
@@ -23,6 +23,7 @@ Haut iners sustinuisse tamen non, terret media non Iove; pugnae tu collocat
 porrigit haec femineae medioque fraude.
 
 ## Diversa fraxineam nescius
+### Diversa fraxineam nescius
 
 Errat obstipuere flavescere quo, sub vulgus **ab et** oscula saecula iam tantum,
 corve facinus, [germanae Oriente](http://argentea.org/vertitur-partem). Vidit

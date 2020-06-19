@@ -2,12 +2,16 @@
   "guides": {
     "categories": [
       {
-        "name": "getting-started",
+        "name": "beginner",
         "description": "Beginner guides to get your development started."
       },
       {
+        "name": "intermediate",
+        "description": "Go beyond the basics with guides that require a little more knowledge."
+      },
+      {
         "name": "advanced",
-        "description": "Go beyond the basics and unleash full potential with these advanced guides."
+        "description": "Unleash full potential with these advanced guides."
       }
     ]
   }

@@ -4,7 +4,8 @@ title: Advanced Guide Sample 1
 description: Description of Advanced Guide \#1
 series_position: null
 author_github: https://github.com/Xetro
-tags: ["type: tutorial", "domain: configuration"]
+author_name: Matevz Golob
+tags: ["language: php", "framework: drupal"]
 ---
 
 # Advanced Guide Sample 1 header
