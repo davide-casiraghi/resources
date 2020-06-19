@@ -13,6 +13,10 @@ $email = sanitize_email( 'info@info.si' );
 $valid_email = is_email( 'info@info.si' );
 ```
 
+## Strip all tags
+``` php
+$value = wp_strip_all_tags( 'text to strip' );
+```
 ## Sanitize string from input
 ``` php
 $string_input = sanitize_text_field( 'text to sanitize' );
