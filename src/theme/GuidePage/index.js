@@ -68,7 +68,7 @@ function GuidePage(props) {
 
   const {content: GuideContents} = props;
   const {frontMatter, metadata} = GuideContents;
-  const {author_github: authorGithub, author_name: authorName, id, last_modified_on: lastModifiedOn, series_position: seriesPosition, title} = frontMatter;
+  const {author_github: authorGithub, author_name: authorName, id, last_modified_on: lastModifiedOn, series_position: seriesPosition, title, description} = frontMatter;
   const {categories, readingTime, tags} = metadata;
   const {assumptions} = frontMatter;
 
@@ -101,7 +101,7 @@ function GuidePage(props) {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
 
   return (
-    <Layout title={title} description={`${title}, in minutes, for free`}>
+    <Layout title={title} description={description}>
       <main className={classnames('container', styles.container)}>
         <aside className={styles.sidebar}>
           <section className={styles.avatar}>
@@ -152,7 +152,7 @@ function GuidePage(props) {
               {(!platform && !source && !sink) && (
                   <div className="hero--category"><Link to={categories[0].permalink + '/'}>{categories[0].name}</Link></div>)}
               <h1 className={styles.header}>{title}</h1>
-              <div className="hero--subtitle">{frontMatter.description}</div>
+              <div className="hero--subtitle">{description}</div>
               <Tags colorProfile="guides" tags={tags} />
             </div>
           </header>
