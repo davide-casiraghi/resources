@@ -5,7 +5,7 @@ description: Description of Advanced Guide \#2
 series_position: null
 author_github: https://github.com/Boshtian
 author_name: Bostjan Kovac
-tags: ["type: tutorial", "domain: deployment"]
+tags: ["language: php", "framework: wordpress"]
 ---
 
 # Advanced Guide Sample 2 header

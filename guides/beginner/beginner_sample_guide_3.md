@@ -6,7 +6,7 @@ series_position: null
 author_github: https://github.com/Xetro
 author_name: Matevz Golob
 
-tags: ["type: howto", "domain: operations"]
+tags: ["language: php", "framework: drupal"]
 ---
 
 # Beginner Guide Sample 3 Header

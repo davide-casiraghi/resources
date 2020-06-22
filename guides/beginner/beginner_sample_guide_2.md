@@ -1,15 +1,15 @@
 ---
 last_modified_on: "2020-05-01"
-title: Beginner Sample Guide 1
-description: Description of Beginner Sample Guide \#1
+title: Beginner Sample Guide 2
+description: Description of Beginner Sample Guide \#2
 series_position: null
 author_github: https://github.com/Xetro
 author_name: Matevz Golob
 
-tags: ["type: howto", "domain: operations"]
+tags: ["language: javascript", "framework: angular"]
 ---
 
-# Beginner Guide Sample 1 Header
+# Beginner Guide Sample 2 Header
 
 ## Iaculantem melioris parvumque augendo hoc levat caelestia
 
@@ -23,6 +23,7 @@ Haut iners sustinuisse tamen non, terret media non Iove; pugnae tu collocat
 porrigit haec femineae medioque fraude.
 
 ## Diversa fraxineam nescius
+### Diversa fraxineam nescius
 
 Errat obstipuere flavescere quo, sub vulgus **ab et** oscula saecula iam tantum,
 corve facinus, [germanae Oriente](http://argentea.org/vertitur-partem). Vidit
@@ -30,7 +31,6 @@ dici, sit et Atlas, unum quae; terras? Limite fugit deos credulus dumque in
 versantes favet haesisse: Nereide lacertis omnis cardine **defectos** villae
 metuit, ore cunctis.
 
-``` php
     if (open_dns_bar) {
         coldWord.card_secondary_file += hit_gigahertz_unit(
                 seo_active_blu.kindle_sli_backside(server,
@@ -42,7 +42,6 @@ metuit, ore cunctis.
     }
     systemVolume -= staticClone.debug(application_controller_teraflops);
     word /= smm_camera(simmFavorites);
-```
 
 Ales dixit sed *illis gerebant* poteratque et per credula dixit, aequora domus,
 virtute. Rescindere vulnus animus pudorque quid spectant felle cui at caris
