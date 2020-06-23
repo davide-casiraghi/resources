@@ -1,6 +1,7 @@
 ---
 id: db_stuff
 title: Database
+description: Collection of database related code snippets for Drupal 8. 
 ---
 
 ## Simple database query
