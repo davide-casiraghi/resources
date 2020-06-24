@@ -55,7 +55,7 @@
 }
 
 // snippet heading caption
-.markdown > p:first-child {
+header > p {
   font-weight: 500;
   font-size: convert(16, px, ems);
   line-height: 20px;
@@ -63,6 +63,6 @@
 }
 
 // snippet heading caption DM
-[data-theme="dark"] .markdown > p:first-child {
+[data-theme="dark"] header > p {
   opacity: .5;
 }
