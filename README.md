@@ -1,18 +1,18 @@
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
-Following instructions are aplicable if you want to test and run the website on your local machine.
+If you want to test and run the website on your local machine or contribute by adding or editing content you should follow instructions below.
 
 ## Website
 
 ### Installation
 
-```
+``` shell script
 $ git clone git@github.com:AGILEDROP/resources.git
 $ cd resources && npm install
 ```
 
 ### Local Development
 
-```
+``` shell script
 $ npm run start
 ```
 
@@ -20,7 +20,7 @@ This command starts a local development server and open up a browser window. Mos
 
 ### Build
 
-```
+``` shell script
 $ npm run build
 ```
 
@@ -42,7 +42,8 @@ Sidebar menu, including any new categories, will be automatically generated base
 
 ### Adding to existing page
 You can simply add or update snippets to existing documents by editing corresponding markdown file inside `./docs/CATEGORY` folder. Add a title describing the snippet and enclose your code with markdown tags.
-``` 
+
+``` markdown
 ## Title
 ### First sub-title
 ``` code block here ```
@@ -57,17 +58,19 @@ Any additional comments (optional)
 
 Snippets header consists of:
 
-- `id`:  used for referencing document inside Docusaurus and creating document slugs for URL. Use snake case when naming.
-- `title`: this will be the main title shown on new documents page.
+- `id`:  used for referencing document inside Docusaurus and creating document slugs for URL. Use snake case when naming
+- `title`: this will be the main title shown on new documents page
+- `description`: short descriptio shown under the main title; also used as og:description meta tag, so make sure it's something appealing in case of sharing on social networks
 
 Example:
-```
+``` markdown
 ---
 id: cool_new_snippets
 title: Cool New Snippets
+description: Collection of snippets that will be helful when working with cool new stuff.
 ---
 ```
-If any field is missing it will be auto-generated from filename.
+If `id` or `title` are missing they will be generated from filename.
 
 Copy file inside `./docs` folder into related category folder (e.g. `./docs/drupal/cool_new_file.md`).
 
@@ -86,21 +89,21 @@ Edit markdown file inside `./guides/CATEGORY` folder.
 Guides header consists of:
 - `last_modified_on`: Date the document was last modified
 - `title`: Main title of guide page
-- `description`: short description shown under the main title on guide page
-- `series_position`: Include if guide is a part of series (OPTIONAL)
-- `author_github`: Link to authors Github profile
-- `author_name`: Displayed name of author
-- `tags`: List of tags, left side of key-value pair denotes tag's type and right side is the category inside that type
+- `description`: short description shown under the main title on guide page; also used as og:description meta tag, so make sure it's something appealing in case of sharing on social networks
+- `series_position`: include if guide is a part of series (OPTIONAL)
+- `author_github`: link to authors Github profile
+- `author_name`: displayed name of author
+- `tags`: list of tags, left side of key-value pair denotes tag's type and right side is the category inside that type; read instructions on using tags below!
 
 Example:
-```
+``` markdown
 ---
 last_modified_on: "2020-05-01"
-title: Beginner Sample Guide \#3
-description: Description of Beginner Sample Guide \#3
+title: Beginner Sample Guide
+description: Description of Beginner Sample Guide
 series_position: null
 author_github: https://github.com/MyGithubProfile
-author_name: Agiledrop Developer
+author_name: John Doe
 tags: ["language: php", "framework: drupal"]
 ---
 ```
@@ -126,8 +129,19 @@ Edit `metadata.json`, add a new entry to `guides->categories` list. Under `descr
 
 ## Publishing
 
-Push your local branch with new/edited documents on Github repository.
+If you want to add your changes to the page on resources.agiledrop.com, you should follow instructions below.
 
-Open a Pull Request to `master` branch and assign it to repo mantainers.
+First, fork the repository on Github. Click on Fork button in the top-right corner on Github page. This creates a new copy of repository under your Github profile.
 
-Once your PR is checked and merged, new website will be deployed by site administrator.
+After you have your own fork, clone the repository to your machine, create a new branch from `master` and do all the necessary changes.
+
+You have to create a new remote upstream to original repository as well:
+``` shell script
+$ git remote add upstream https://github.com/AGILEDROP/resources
+```
+
+When you're done with your changes, push your local branch to your Github repository. Once you push the changes to your repo, the "Compare & pull request" button will appear in GitHub.
+
+Click it and open a new pull request to `master` branch in base repository and assign it to repository mantainers.
+
+Once your pull request is checked and merged, your changes will be deployed and visible on https://resources.agiledrop.com.
