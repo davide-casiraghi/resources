@@ -1,3 +1,9 @@
+---
+id: contribute
+title: Contribute
+description: Guidelines for contributing
+---
+
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 If you want to test and run the website on your local machine or contribute by adding or editing content you should follow instructions below.
 
