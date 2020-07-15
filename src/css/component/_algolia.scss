@@ -1,0 +1,20 @@
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  background: $gray;
+  font-size: convert(14, px, ems);
+  color: $white;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  //border-top-left-radius: 10px;
+  //border-top-right-radius: 10px;
+  width: 100%;
+  z-index: 10;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+  width: 100%;
+  text-align: left;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--content {
+  width: 100%;
+}

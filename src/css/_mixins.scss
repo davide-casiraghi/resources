@@ -13,8 +13,14 @@
 }
 
 // responsive
-@mixin large {
+@mixin largeOnly {
   @media (max-width: $large-width) and (min-width: $medium-width+1) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (max-width: $large-width) {
     @content;
   }
 }

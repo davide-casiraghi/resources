@@ -42,7 +42,7 @@
 
 // stats responsive --large
 .stats {
-  @include large {
+  @include largeOnly {
     // stats title
     .title {
       font-size: convert(14, px, ems);

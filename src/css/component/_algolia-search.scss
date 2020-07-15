@@ -16,6 +16,11 @@
 // search input wrappper
 .navbar__search {
   padding-left: 2em;
+
+  @include largeOnly {
+    padding-left: 4em;
+  }
+
   @include medium {
     position: fixed;
     top: 20px;
@@ -26,34 +31,42 @@
 // search input
 .navbar__search-input {
   background-color: $white;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid $grayLight;
   color: $midnight;
   background-image: url("/img/search.svg");
   background-position: 10px center;
   background-repeat: no-repeat;
   width: 260px;
+  line-height: 40px;
 
   // placeholder
   &::placeholder {
     color: $space;
   }
 
-  @include medium {
+  @include large {
     position: fixed !important;
-    top: 20px;
-    right: 68px;
-    transition: .2s;
+    top: 16px;
+    right: 30px;
+    transition: .3s;
     border: 0px solid $grayLight;
     width: 30px;
     background-size: 22px;
+    &:focus {
+      width: 350px;
+      right: 30px;
+      border: 1px solid $grayLight;
+      background-size: 17px;
+    }
+  }
+
+  @include medium {
+    right: 68px;
 
     &:focus {
       width: calc(100% - 60px);
       max-width: calc(#{$small-width} - 60px);
-      right: 30px;
-      border: 1px solid $grayLight;
-      background-size: 17px;
     }
   }
 }
@@ -76,18 +89,43 @@
   }
 }
 
+// search input : focused
+@include large {
+  .algolia-autocomplete:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    height: 74px;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+  }
+
+  .search-icon-hidden + .algolia-autocomplete:before {
+    opacity: .8;
+  }
+
+  // search input : focused DM
+  [data-theme="dark"] .algolia-autocomplete:before {
+    background-color: $midnight;
+  }
+}
+
 // suggestions wrapper
 .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
   box-shadow:  -1px 15px 26px rgba(black, .3);
-  border-radius: 10px;
   height: auto !important;
   max-height: calc(100vh - 120px);
-  top: 100px !important;
+  width: 450px;
+  top: 50px !important;
   right: 0 !important;
   left: unset !important;
 
   @include medium {
-    top: 130px !important;
+    top: 70px !important;
     position: fixed !important;
     width: calc(100% - 60px) !important;
     left: unset !important;
@@ -110,24 +148,21 @@
   }
 }
 
+.algolia-docsearch-suggestion--category-header  {
+  display: none;
+}
+
 // suggestions __ header
 .algolia-autocomplete .algolia-docsearch-suggestion.algolia-docsearch-suggestion__main .algolia-docsearch-suggestion--category-header {
   background: $gray;
   font-size: convert(14, px, ems);
+  font-weight: 900;
   color: $white;
   text-transform: uppercase;
   padding: 15px 30px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  position: absolute;
-  left: 0;
-  top: -53px;
   width: 100%;
   z-index: 10;
-}
-
-.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
-  display: none;
+  display: block;
 }
 
 // suggestions __ header DM
@@ -146,8 +181,18 @@
   transform: rotate(-45deg);
   border-color: $gray;
   background: $gray;
-  top: -60px;
+  top: -5px;
   right: 50px
+}
+
+.ds-without-1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: $grayDarkest;
 }
 
 // suggestions __ header __ triganle DM
@@ -178,7 +223,7 @@
   padding: 30px;
   background-color: $white;
   width: 100%;
-  float: left;
+  float: none;
   border-bottom: 1px solid $grayLight;
 }
 
@@ -207,6 +252,7 @@
 }
 
 // suggestion category
+.algolia-docsearch-suggestion--subcategory-column-text,
 .algolia-autocomplete .algolia-docsearch-suggestion.algolia-docsearch-suggestion__secondary .algolia-docsearch-suggestion--subcategory-column {
   float: none;
   width: auto;
@@ -216,6 +262,8 @@
   font-weight: 700;
   font-size: convert(14, px, ems);
 }
+
+
 
 // suggestion category DM
 [data-theme="dark"] .algolia-autocomplete .algolia-docsearch-suggestion.algolia-docsearch-suggestion__secondary .algolia-docsearch-suggestion--subcategory-column {
@@ -253,6 +301,10 @@
 // suggestions __ item __ text
 .algolia-autocomplete .algolia-docsearch-suggestion--text {
   margin-top: 10px;
+}
+
+.ds-without-1 .algolia-docsearch-suggestion--text {
+  margin-top: 30px;
 }
 
 .algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--wrapper {

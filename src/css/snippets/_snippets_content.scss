@@ -15,7 +15,7 @@
 [class*="docItemWrapper"] {
   padding: 0 !important;
 
-  @include large {
+  @include largeOnly {
     max-width: unset;
   }
 }

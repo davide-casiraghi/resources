@@ -27,7 +27,7 @@
 
 // sidebar left  wrapper -- snippets DM
 [class*="docSidebarContainer"] > [class*="sidebar"]:not(.menu--responsive) {
-  @include large {
+  @include largeOnly {
     position: fixed;
     top: 0;
   }
@@ -42,7 +42,7 @@ main > [class*="sidebar"]:first-child {
   height: calc(100vh - #{$navbar-height});
   padding-right: 50px;
 
-  @include large {
+  @include largeOnly {
     position: sticky;
     top: $navbar-height;
   }
@@ -63,7 +63,7 @@ main > [class*="sidebar"]:last-child {
   padding-left: 50px;
   min-width: unset;
 
-  @include large {
+  @include largeOnly {
     padding-left: 30px;
   }
 
@@ -80,7 +80,7 @@ main > [class*="sidebar"]:last-child {
     padding-right: 0;
     max-width: $sidebar-right-width;
 
-    @include large {
+    @include largeOnly {
       padding-left: 30px;
     }
   }
@@ -99,7 +99,7 @@ main > [class*="sidebar"]:last-child {
 // sidebar left -- responsive -- large
 [class*="docSidebarContainer"],
 main > [class*="sidebar"]:first-child {
-  @include large {
+  @include largeOnly {
     padding-right: 30px;
   }
 }
