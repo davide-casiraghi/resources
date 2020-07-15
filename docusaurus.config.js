@@ -43,6 +43,10 @@ module.exports = {
         },
       ],
     },
+    algolia: {
+      apiKey: '90f2b0f0752096de0371cea1dd84aab5',
+      indexName: 'agiledrop_resources',
+    },
   },
   presets: [],
   plugins: [
@@ -72,5 +76,6 @@ module.exports = {
         customCss: require.resolve("./src/css/custom.scss"),
       },
     ],
+    "@docusaurus/theme-search-algolia",
   ],
 };
