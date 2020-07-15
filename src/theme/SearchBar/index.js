@@ -16,7 +16,7 @@ import classnames from 'classnames';
 
 import DocusaurusContext from '@docusaurus/context';
 
-import './styles.css';
+// import './styles.css';
 
 const Search = props => {
   const [isEnabled, setIsEnabled] = useState(true);

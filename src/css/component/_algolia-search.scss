@@ -192,13 +192,17 @@
   left: 0;
   width: 100%;
   height: 30px;
-  background-color: $grayDarkest;
+  background-color: $gray;
 }
 
 // suggestions __ header __ triganle DM
 [data-theme="dark"] .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu:before {
   background: $grayDarkest;
   border-color: $grayDarkest;
+}
+
+[data-theme="dark"] .ds-without-1:after {
+  background-color: $grayDarkest;
 }
 
 // suggestions __ item
