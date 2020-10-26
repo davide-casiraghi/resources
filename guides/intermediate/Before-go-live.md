@@ -1,12 +1,12 @@
 ---
-last_modified_on: "2020-24-10"
+last_modified_on: "2020-25-10"
 id: before_go_live
-title: Before go live
+title: Before go live checklist
 description: The purpose of the list is to provide the tasks which needs to be executed before website go live
 series_position: null
 author_github: https://github.com/alesbencina
 author_name: Ales Bencina
-tags: ["language: php", "framework: drupal"]
+tags: ["language: php", "framework: drupal", "seo", "golive"]
 ---
 
 ## Check deploy for errors / warnings
