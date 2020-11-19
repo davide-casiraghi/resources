@@ -50,3 +50,19 @@ $query = \Drupal::database()->delete('cachetags');
 $query->condition('tag', '%block%', 'LIKE');
 $query->execute();
 ```
+
+## Select a node that has specific set of entity references
+Select all nodes that have **at least** terms with id 2 and 8 referenced on
+field_terms. You need to add a separate andConditionGroup for each term.
+
+``` php
+$query = \Drupal::entityQuery('node')
+  ->condition('status', NODE_PUBLISHED)
+$and = $query->andConditionGroup();
+$and->condition('field_terms', 2);
+$query->condition($and);
+$and = $query->andConditionGroup();
+$and->condition('field_terms', 8);
+$query->condition($and);
+$result = $query->execute();
+```
