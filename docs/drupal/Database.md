@@ -52,7 +52,7 @@ $query->execute();
 ```
 
 ## Select a node that has specific set of entity references
-Lets imagine you need to select all nodes that have **at least** 2 and 8 terms saved on
+Select all nodes that have **at least** terms with id 2 and 8 referenced on
 field_terms. You need to add a separate andConditionGroup for each term.
 
 ``` php
